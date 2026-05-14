@@ -1,0 +1,70 @@
+{
+  "tier": 1,
+  "built_at": "2026-05-13T02:06:36.421363Z",
+  "n_sources": 10,
+  "complete": 9,
+  "partial": 1,
+  "failed": 0,
+  "sources": [
+    {
+      "id": "gva_mass_shootings",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 672646
+    },
+    {
+      "id": "cdc_psx4_wq38",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 631994
+    },
+    {
+      "id": "census_acs5_2023",
+      "status": "complete",
+      "n_files": 26,
+      "total_bytes": 68483391
+    },
+    {
+      "id": "usda_food_access_2019",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 85803176
+    },
+    {
+      "id": "nces_f33_finance",
+      "status": "complete",
+      "n_files": 4,
+      "total_bytes": 15021591
+    },
+    {
+      "id": "nces_edge_lea_2425",
+      "status": "partial",
+      "n_files": 1,
+      "total_bytes": 8220921
+    },
+    {
+      "id": "tiger_2024_county",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 83913260
+    },
+    {
+      "id": "tiger_2024_tract",
+      "status": "complete",
+      "n_files": 52,
+      "total_bytes": 420820868
+    },
+    {
+      "id": "tiger_2024_unsd",
+      "status": "complete",
+      "n_files": 52,
+      "total_bytes": 152726422
+    },
+    {
+      "id": "tiger_2024_aiannh",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 9149754
+    }
+  ]
+}

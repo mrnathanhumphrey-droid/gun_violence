@@ -1,0 +1,32 @@
+{
+  "tier": 3,
+  "built_at": "2026-05-13T02:05:59.090877+00:00",
+  "n_sources": 4,
+  "complete": 0,
+  "partial": 0,
+  "documented_skipped": 4,
+  "failed": 0,
+  "notes": "All 4 Tier 3 sources documented as: registration-walled (NIBRS), substituted in Tier 1 (NVDRS via psx4-wq38, BIA via TIGER AIANNH), or requires per-state acquisition (property tax).",
+  "sources": [
+    {
+      "id": "nvdrs",
+      "status": "substituted_tier_1",
+      "notes": "psx4-wq38 covers same NCHS-derived totals at county level."
+    },
+    {
+      "id": "nibrs",
+      "status": "registration_walled",
+      "notes": "Requires api.data.gov key or ICPSR registration."
+    },
+    {
+      "id": "property_tax",
+      "status": "per_state_required",
+      "notes": "No unified national source; Tax Foundation summaries available as proxy."
+    },
+    {
+      "id": "bia_reservations",
+      "status": "covered_by_tier_1",
+      "notes": "TIGER 2024 AIANNH is canonical."
+    }
+  ]
+}

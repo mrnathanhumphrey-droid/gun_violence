@@ -1,0 +1,28 @@
+{
+  "tier": 2,
+  "built_at": "2026-05-13T02:06:36.421363Z",
+  "n_sources": 3,
+  "complete": 2,
+  "partial": 1,
+  "failed": 0,
+  "sources": [
+    {
+      "id": "holc_mapping_inequality",
+      "status": "complete",
+      "n_files": 1,
+      "total_bytes": 10563682
+    },
+    {
+      "id": "eviction_lab",
+      "status": "complete",
+      "n_files": 4,
+      "total_bytes": 633914165
+    },
+    {
+      "id": "sundown_towns",
+      "status": "partial",
+      "n_files": 1,
+      "total_bytes": 231028
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+cell,actual_count,estimate
+"UB-HI (urban, Black-maj ≥60%, high inequity)",1055,500-1000
+"UH-HI (urban, Hispanic-maj ≥60%, high inequity)",1116,500-1000
+"UW-LI (urban, White-maj ≥70%, low inequity)",3941,1000+
+"SB-MC (suburban, Black-maj ≥60%, low-to-mod inequity)",421,300-500
+"RW-HI (rural county, White-maj ≥80%, high inequity)",34,150-250
+"RB-HI (rural county, Black-maj ≥50%, high inequity)",36,60-100
+"RH-HI (rural county, Hispanic-maj ≥50%, high inequity)",84,40-60
+"RNA-HI (reservation, AIAN-maj ≥40%, high inequity)",7,20-30 (reservations)

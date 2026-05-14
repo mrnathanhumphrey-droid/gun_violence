@@ -1,0 +1,1153 @@
+{
+  "manifest_version": 1,
+  "built_at": "2026-05-13T02:06:36.421363Z",
+  "root": "D:/Gun Violence",
+  "sources": [
+    {
+      "source_id": "gva_mass_shootings",
+      "source_name": "Gun Violence Archive (mass shootings subset)",
+      "url_pulled": "https://github.com/dxzys/Gun-Violence-Data",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "git clone --depth 1 (master @ 2026-05-12)",
+      "files": [
+        {
+          "path": "outcomes/gva/Gun-Violence-Data/data/gva_master.csv",
+          "size_bytes": 672646,
+          "sha256": "88fca4d333635ccf66cfe1b7c8111913fec5877f0c0d376fc8bd021b16b3998f",
+          "rows": 5871
+        }
+      ],
+      "year_coverage": "2013\u20132026",
+      "geographic_coverage": "national, lat/lon",
+      "known_limitations": "SCOPE MISMATCH vs brief: this repo tracks GVA's mass-shootings definition only (4+ shot, perp excluded), not the full ~50\u201370k incidents/year. ~5,872 incidents 2013\u2013present. Full incident data would require Selenium scrape of GVA year-by-year reports. User directive 2026-05-12: keep mass-shootings as-is.",
+      "tier": 1,
+      "status": "complete",
+      "notes": "Materially narrower than brief implied; flagged."
+    },
+    {
+      "source_id": "cdc_psx4_wq38",
+      "source_name": "CDC Mapping Injury, Overdose, and Violence - County (replaces WISQARS)",
+      "url_pulled": "https://data.cdc.gov/resource/psx4-wq38.json",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "2026-04-20 data_as_of",
+      "files": [
+        {
+          "path": "outcomes/wisqars/cdc_psx4_wq38/cdc_county_injury_violence.parquet",
+          "size_bytes": 631994,
+          "sha256": "f5ef725e4e8baa2364b0be50afdf9c48fc56c7826ec04873ce3956622ffac410",
+          "rows": 0
+        }
+      ],
+      "year_coverage": "2019\u20132024 + TTM",
+      "geographic_coverage": "national, county-level (GEOID)",
+      "known_limitations": "Source PIVOT from WISQARS (no public CSV API). psx4-wq38 publishes modeled small-area rate estimates (rate_m) where raw counts are suppressed; raw count_sup field separately marks 1\u20139 cells. See outcomes/wisqars/NOTE_SOURCE_PIVOT.md.",
+      "tier": 1,
+      "status": "complete",
+      "notes": "6 intents incl FA_Deaths/FA_Homicide/FA_Suicide, 132K rows."
+    },
+    {
+      "source_id": "census_acs5_2023",
+      "source_name": "Census ACS 5-year estimates (2019\u20132023)",
+      "url_pulled": "https://api.census.gov/data/2023/acs/acs5",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "2023 ACS 5-year (2019\u20132023)",
+      "files": [
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B01001_county.parquet",
+          "size_bytes": 1085513,
+          "sha256": "de7e8a693b0e0dea97c80656a5037feea7d1dbe966bf6e9573678f0d518d5754",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B01001_tract.parquet",
+          "size_bytes": 12282284,
+          "sha256": "b7be8f25f9282ac2ac8b3a4f5e5043ef602c246191683c3329a6060aee25cccf",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B02001_county.parquet",
+          "size_bytes": 300229,
+          "sha256": "84d232ca3de7db0af2f79d18632a1c30f6cdc969449c1a821266c17826e668a8",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B02001_tract.parquet",
+          "size_bytes": 4420505,
+          "sha256": "5cc96a3d28f1d338d4ea11e2cea020ff8367e0636c24817d4a96987771afd33c",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B03003_county.parquet",
+          "size_bytes": 138007,
+          "sha256": "47e23593e40dc378020a3ab77d471ddce77cd3a14e5d38bba8e20a517ee78e5d",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B03003_tract.parquet",
+          "size_bytes": 2867732,
+          "sha256": "5f0ccba26a8e5f6325ebc15fd248e95c57208fa3884c79ec636b45e4aaf616b2",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B11001_county.parquet",
+          "size_bytes": 314861,
+          "sha256": "2c96b53d81da8cd428c25ddeff30075389c5d7f5c7656f66c0567cc9219569b4",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B11001_tract.parquet",
+          "size_bytes": 3481926,
+          "sha256": "382babb77549228639a1991c32d879439df79c7b831b4611cb04e04f01887eaa",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B11003_county.parquet",
+          "size_bytes": 500465,
+          "sha256": "230df911da3f99b23bedb6f6f4532438bbcf36eca06216ec56dcaef442fe6f8b",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B11003_tract.parquet",
+          "size_bytes": 5378129,
+          "sha256": "02ac2079932474035c3b23f1aa07a17357930f16457f7d16362754cbeb3cf11e",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B15003_county.parquet",
+          "size_bytes": 544638,
+          "sha256": "85e3ed3731b1129fbdd562db94f9aeaec1f107df1d299a3829c68798c23433c9",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B15003_tract.parquet",
+          "size_bytes": 5742507,
+          "sha256": "b13263969aeb886943f46b6f53c2fa2fe924d280c5f44ccb2d6d07eafbc14878",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B17001_county.parquet",
+          "size_bytes": 1258944,
+          "sha256": "af5d47f79a29da98899f6adae97c8a1e5569298cab8c6bcaba23bd4c41b61296",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B17001_tract.parquet",
+          "size_bytes": 13005841,
+          "sha256": "6b49c0e8b25e989c1988889b4fecabda474117409c549423726970c240cf2421",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B19013_county.parquet",
+          "size_bytes": 115916,
+          "sha256": "2378593db381bfad1e94e875281ece786d24b1f0fbeea4d555c94916ffadb1ea",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B19013_tract.parquet",
+          "size_bytes": 2466292,
+          "sha256": "b4f5b0ecf8ca16fd77b9fd895436ddb6a7b472dfea60100fd29d21b70a41279a",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B19301_county.parquet",
+          "size_bytes": 99660,
+          "sha256": "d3b1913e5a28a875173a47bf28460976489f64380237e22ee3cbd6499bd1eb88",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B19301_tract.parquet",
+          "size_bytes": 2467555,
+          "sha256": "fa8ba88cd9ce443fc4a1bf555f82c5f3b252e281cc72de8ae5ce7dbccb7c2bac",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B23025_county.parquet",
+          "size_bytes": 266248,
+          "sha256": "228efaf8f07c979a8fd8c4496477b1de59a0c40a353a0f2669640f0fa01ccbdc",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B23025_tract.parquet",
+          "size_bytes": 3147620,
+          "sha256": "3809cd7cb1c4bc803cd82659796a99ac58b8300a3a9e4a7fcd8ec5ae3a99dcd0",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25003_county.parquet",
+          "size_bytes": 155379,
+          "sha256": "5ad58f0b0dff3a108f59a5bfc04a961609364ad80a46c545068b1985a10c19c8",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25003_tract.parquet",
+          "size_bytes": 2157627,
+          "sha256": "ab641d1a56054264947728ad90fe94231aff11fa52910fa137cdd984e276fc4c",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25070_county.parquet",
+          "size_bytes": 282026,
+          "sha256": "e011ee60a3878bab5ad0e365a80a97b6a7665f075ce8d494b6233a6a31891e0c",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25070_tract.parquet",
+          "size_bytes": 3645191,
+          "sha256": "0613a59df28b676e4035d936e629dec40b27b6b7e0c3afb97c3b5b0ec39d5a12",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25077_county.parquet",
+          "size_bytes": 110683,
+          "sha256": "a571a85676dc6389ab0c8bf4c7d7930ea9ab38c37831462c044ba8d846d25cfe",
+          "rows": 0
+        },
+        {
+          "path": "demographics/acs_5yr/acs5_2023_B25077_tract.parquet",
+          "size_bytes": 2247613,
+          "sha256": "addac868ef77a0a45f540df35ab3dccf460a3811604931bda5bf2955ee723cf3",
+          "rows": 0
+        }
+      ],
+      "year_coverage": "2019\u20132023 (5-year estimate)",
+      "geographic_coverage": "tract + county, all 50 states + DC + PR",
+      "known_limitations": "13 tables \u00d7 2 geographies = 26 parquet files.",
+      "tier": 1,
+      "status": "complete",
+      "notes": "Tables: B01001 B02001 B03003 B17001 B19013 B19301 B25003 B25070 B25077 B15003 B23025 B11001 B11003"
+    },
+    {
+      "source_id": "usda_food_access_2019",
+      "source_name": "USDA Food Access Research Atlas 2019",
+      "url_pulled": "https://www.ers.usda.gov/sites/default/files/_laserfiche/DataFiles/80591/FoodAccessResearchAtlasData2019.xlsx",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "2019 (current public release)",
+      "files": [
+        {
+          "path": "inequity_features/usda_food_access/FoodAccessResearchAtlasData2019.xlsx",
+          "size_bytes": 85803176,
+          "sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2019",
+      "geographic_coverage": "tract-level national",
+      "known_limitations": "2019 vintage; check if newer release available later.",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "nces_f33_finance",
+      "source_name": "NCES Common Core of Data \u2014 School District Finance Survey (F-33)",
+      "url_pulled": "https://nces.ed.gov/ccd/data/zip/Sdf{YY}_1a.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "SY 2018-19 through SY 2021-22",
+      "files": [
+        {
+          "path": "inequity_features/nces_school/Sdf19_1a.zip",
+          "size_bytes": 3397463,
+          "sha256": "91990ef1d18aef635cd56771b20846fe80a4b46ab7645e8c98cbfd6817b68c80",
+          "rows": null
+        },
+        {
+          "path": "inequity_features/nces_school/Sdf20_1a.zip",
+          "size_bytes": 3636743,
+          "sha256": "7bd17670f203e8ca5e63c03ab67920f1178b207d230e1a07f883bf9410612619",
+          "rows": null
+        },
+        {
+          "path": "inequity_features/nces_school/Sdf21_1a.zip",
+          "size_bytes": 3860258,
+          "sha256": "db0626a544a45b07b05abcd0cd1bd7b88057563a640b861ebb2fa7b9d6a5733b",
+          "rows": null
+        },
+        {
+          "path": "inequity_features/nces_school/Sdf22_1a.zip",
+          "size_bytes": 4127127,
+          "sha256": "4cc0744580c8c6a75c063e95ebc7a5ced6a1743b57503e90d29f2019f8c6ba28",
+          "rows": null
+        }
+      ],
+      "year_coverage": "SY 2018-19 / 2019-20 / 2020-21 / 2021-22",
+      "geographic_coverage": "district-level (LEAID), national",
+      "known_limitations": "Fixed-width .txt inside zip; layout files at NCES /ccd/data/txt/sdfYY_1a_layout.txt (not bundled here).",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "nces_edge_lea_2425",
+      "source_name": "NCES EDGE \u2014 Public LEA geocodes SY 2024-25",
+      "url_pulled": "https://nces.ed.gov/programs/edge/data/EDGE_GEOCODE_PUBLICLEA_2425.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "SY 2024-25",
+      "files": [
+        {
+          "path": "inequity_features/nces_school/EDGE_GEOCODE_PUBLICLEA_2425.zip",
+          "size_bytes": 8220921,
+          "sha256": "d7f89ec77c4819c62e0b37212cd4bf5d15b6e7873629f14d7fd1b01266ef287f",
+          "rows": null
+        }
+      ],
+      "year_coverage": "SY 2024-25",
+      "geographic_coverage": "national, district-level with lat/lon",
+      "known_limitations": "Directory + geocodes only; full demographic detail (enrollment by race, FRL, ELL) requires CCD LEA Membership/IDEA/ELL files (not pulled).",
+      "tier": 1,
+      "status": "partial",
+      "notes": "Modern replacement for the older CCD LEA Universe per-year zips."
+    },
+    {
+      "source_id": "tiger_2024_county",
+      "source_name": "TIGER/Line 2024 \u2014 Counties",
+      "url_pulled": "https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "TIGER 2024",
+      "files": [
+        {
+          "path": "demographics/tract_boundaries/tl_2024_us_county.zip",
+          "size_bytes": 83913260,
+          "sha256": "04e668d3502757c837c13444730547cd967f28a2c49aeffb873d1792ab2cb97b",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2024 vintage",
+      "geographic_coverage": "national",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "tiger_2024_tract",
+      "source_name": "TIGER/Line 2024 \u2014 Census Tracts (state-by-state)",
+      "url_pulled": "https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_{ST}_tract.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "TIGER 2024",
+      "files": [
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_01_tract.zip",
+          "size_bytes": 11741752,
+          "sha256": "39024c702c74100644a843df4a41ba69e52a84c4efdff18255aa842b079b6eca",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_02_tract.zip",
+          "size_bytes": 3186474,
+          "sha256": "f94f6c00361196cd8b5fa41dd7ab5b425ede6cc55ae2d7928e2665979484fc44",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_04_tract.zip",
+          "size_bytes": 8477370,
+          "sha256": "5405732b0167843f07e0575c9a42dca99de2a83710cb5dafbe30db65ee9414ba",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_05_tract.zip",
+          "size_bytes": 10523646,
+          "sha256": "6257e520d4a43fba97e6bf809339a0faf912ef84b645b8a8e441bfa139bb8ab7",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_06_tract.zip",
+          "size_bytes": 32451946,
+          "sha256": "8ad60e582b4d61be94ac072a4dd80d763255c0c987c616c7e6f9ffc7ee0bd318",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_08_tract.zip",
+          "size_bytes": 8348815,
+          "sha256": "89277c69cbdc33979d09309379c66ff264e159c1d72bd66b407282180ffa4a08",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_09_tract.zip",
+          "size_bytes": 2706087,
+          "sha256": "f5c876f3384563ce4e87adcd60c10494a52cf99b1b8f452fb6620591da6220ca",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_10_tract.zip",
+          "size_bytes": 1100100,
+          "sha256": "2c6e18e7ec5010db775e7ecf09f3ace35850eb136197443fa7149e3c990a400e",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_11_tract.zip",
+          "size_bytes": 367284,
+          "sha256": "9bd48693f1106f4058c35d038a489b1916f28a83e06cfdb0e6a36b675352148e",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_12_tract.zip",
+          "size_bytes": 13738088,
+          "sha256": "dd178ccb9c5324492c22ef82c78bfbfe95ebf5248463eeb85d54b00983d85b3c",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_13_tract.zip",
+          "size_bytes": 16026029,
+          "sha256": "875a45fece3491cb3caaffed3f57f653b93710a28ef30ad24982d8258d989dc4",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_15_tract.zip",
+          "size_bytes": 1761897,
+          "sha256": "2bf2e4d1f1cd09e8ee4984005e48c18f392cbd4625aba0edb1d3a5656c0b5af3",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_16_tract.zip",
+          "size_bytes": 4830612,
+          "sha256": "7c8b740bc8f0d5c068208d70d332f2144400f095ae91246a45f9f0dfac900ca0",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_17_tract.zip",
+          "size_bytes": 10021807,
+          "sha256": "f15b8619338d563bfeac49c5777dd46afd55a5d6557bf5c88fd63faf5c042f81",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_18_tract.zip",
+          "size_bytes": 6311571,
+          "sha256": "85f043057ca16c1cbb3c44e67187670da863e17a46d1fb93a5a05257c1d52986",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_19_tract.zip",
+          "size_bytes": 4118756,
+          "sha256": "87810976554488944851e49e69d15f1745c59504ac0d1ec3c0e7461eccfe819e",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_20_tract.zip",
+          "size_bytes": 3111366,
+          "sha256": "aebf9f7c6fbe3be1cb5bd05da7c1211c0b0fade97e436769faf632ee56e0673d",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_21_tract.zip",
+          "size_bytes": 13238747,
+          "sha256": "44eb8e3f29c0d5b7cbd6d60afb9d75341732330a1c0054e80692604c946005f0",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_22_tract.zip",
+          "size_bytes": 8301667,
+          "sha256": "4b5620a124036aa28eab6a3092de3b161cb26948f168270c5b601f97057e3b34",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_23_tract.zip",
+          "size_bytes": 3127098,
+          "sha256": "acc85c6e28b12218132ccda19a139e901f99aa453e94e941957d2a9ddd70373f",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_24_tract.zip",
+          "size_bytes": 5828310,
+          "sha256": "2024640aeb94cf9cc999cb611e8493a2e58562d0e2df413fde46d6b85d3fda51",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_25_tract.zip",
+          "size_bytes": 4506627,
+          "sha256": "74ca27e8dd9ed393e43b75e237ff7d652ef072e413532821847de58a7aa4bfd4",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_26_tract.zip",
+          "size_bytes": 5575554,
+          "sha256": "220c0a351d94c9de456d87c5db78f3e3864b3287370350f1e503a84565224e82",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_27_tract.zip",
+          "size_bytes": 7492209,
+          "sha256": "ff85e970af09db62e28f1010cbf51c0241373da4e75b168aee76ca224473f3ce",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_28_tract.zip",
+          "size_bytes": 9657159,
+          "sha256": "f0a48cb1d85b9f448bfddbeb8de0ef0105497e9d7f22464d10bcdb380c9df252",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_29_tract.zip",
+          "size_bytes": 10468112,
+          "sha256": "a54502eb6a8bc1ce90e19db016796f40d89780701f357d7334783760359d3862",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_30_tract.zip",
+          "size_bytes": 7029017,
+          "sha256": "c055416a4750c43de9f33fefac986132966b11d364fb1d158efe8f8fbcf2200c",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_31_tract.zip",
+          "size_bytes": 2243323,
+          "sha256": "fa908d438eadf7bb1492313c0178204547d207a7d57e37a4bde1a62f104565db",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_32_tract.zip",
+          "size_bytes": 3194438,
+          "sha256": "259a472173e9b1dd313e1340c066ddc0e244722893491310b2f22a4072922835",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_33_tract.zip",
+          "size_bytes": 1498206,
+          "sha256": "9e6d06c7bafddddf087b21bf351d572aa766f96efdc7dbf473ee94b8b9691d7b",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_34_tract.zip",
+          "size_bytes": 7117862,
+          "sha256": "6aa58cfd7b8563383a0104bc7363d9de9daeac0ad524a12ed0d4fd473a03c38e",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_35_tract.zip",
+          "size_bytes": 4962757,
+          "sha256": "cc3433398355893969d01cf9fb3985056d3431ebbd6073fa51d72f695785f4ab",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_36_tract.zip",
+          "size_bytes": 8853911,
+          "sha256": "80010cc0b3e1ef6d8c27072ec7f679f328d0e1d82b3b96cb744e8811df8221c7",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_37_tract.zip",
+          "size_bytes": 20071906,
+          "sha256": "55020d01d899e244dbbfdd0c876bf01a5e8f1077905faa4302ef0eb87dc47444",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_38_tract.zip",
+          "size_bytes": 1807224,
+          "sha256": "a40a11c57e4815d0104c6cc81d3db2d6e961816df63b9a6f324788e8dd5f9e77",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_39_tract.zip",
+          "size_bytes": 9445303,
+          "sha256": "7081807a0921d9bfaf50e10b3eb0caa7f0d76e6b6f05b9e1bb24f3df6d39b18d",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_40_tract.zip",
+          "size_bytes": 6918822,
+          "sha256": "d58e2a8a94f7644ca22636de0da6116652ca8ab89b57e293f083901575d0e677",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_41_tract.zip",
+          "size_bytes": 10648349,
+          "sha256": "5c429b7577273441ee7f045718cb9989a6fb03f6bf72167410efebbc144cba5c",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_42_tract.zip",
+          "size_bytes": 13057777,
+          "sha256": "934e5ee0973b2f57359bf43c810b547aacaaee17069bcbbe5b6b610006dcc71b",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_44_tract.zip",
+          "size_bytes": 822820,
+          "sha256": "af2f3a2bd6be0115a83fa302ba63444711ea2ee414cba83388756e0ea3c10c90",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_45_tract.zip",
+          "size_bytes": 10008769,
+          "sha256": "b2ac3a0a700cdd493dd319de0ef9acf18a7c168e2bbe70065876de2e95fa4055",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_46_tract.zip",
+          "size_bytes": 2856937,
+          "sha256": "c4e0887acb9e68c61b9301f39da6554ad18ff76756e3b421076ed66621bfaf02",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_47_tract.zip",
+          "size_bytes": 15632360,
+          "sha256": "e635ccb4f3035f8fa19b76352a63c89b893f57d0b96ecd5b713754141184bd3d",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_48_tract.zip",
+          "size_bytes": 32628659,
+          "sha256": "aca646a9adcf777ce2e9a8f9fc86c51f8270a14ca5f68f84a2749c3b6e4e69a1",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_49_tract.zip",
+          "size_bytes": 5617916,
+          "sha256": "52e25b3282932c9649f773691be28551936f8dc40efa3591d76f0458f52be657",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_50_tract.zip",
+          "size_bytes": 780915,
+          "sha256": "e6b3f2cfb6463c9a029198d5f20a272d6f0889ae6e6dccf617417cf900be9601",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_51_tract.zip",
+          "size_bytes": 16828862,
+          "sha256": "6f84381624560fd97fff27c728ed042164ca1d28aebbeef1abdf923d9680599e",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_53_tract.zip",
+          "size_bytes": 9827813,
+          "sha256": "60af16a9d108a55e8a9642dc38c77d10e77b143c2303758fc5bd626229e3a89f",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_54_tract.zip",
+          "size_bytes": 8008731,
+          "sha256": "ad803b56b950aad4715ded4f4f260df9ba6bbc686c9bdd0ac4f700c607b3e8d8",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_55_tract.zip",
+          "size_bytes": 7642880,
+          "sha256": "313c378d7fa173bf653381d644d8ded7b4f6241b2065d2b890e1fccccaab5de5",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_56_tract.zip",
+          "size_bytes": 2794300,
+          "sha256": "b4758252afa61918dfc178b8a6caeff86a36ed474146d74af73f4a3ab8d99c88",
+          "rows": null
+        },
+        {
+          "path": "demographics/tract_boundaries/by_state/tl_2024_72_tract.zip",
+          "size_bytes": 3501928,
+          "sha256": "b41ba079f300bad9fbfaab519acd1b79a8996cc96c8a8cf3b4b3005e196d782b",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2024 vintage",
+      "geographic_coverage": "50 states + DC + PR (52 zips)",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "tiger_2024_unsd",
+      "source_name": "TIGER/Line 2024 \u2014 Unified School Districts (state-by-state)",
+      "url_pulled": "https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_{ST}_unsd.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "TIGER 2024",
+      "files": [
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_01_unsd.zip",
+          "size_bytes": 5264870,
+          "sha256": "bed35424a137ef1fbbf4a403725cc4fc41c1bffb696825d0c0ab3a884c69dc54",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_02_unsd.zip",
+          "size_bytes": 751129,
+          "sha256": "50b1282a4b2d1a3709bd4375f01c07900bfdbcc5415664999d8ec72152a805f2",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_04_unsd.zip",
+          "size_bytes": 1296286,
+          "sha256": "4b405bc81ce754cb4a93845b204b2175ec3ec9c9fb5b782e0017437fa06ef50d",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_05_unsd.zip",
+          "size_bytes": 4434593,
+          "sha256": "a09e6c9634c67796f60666a25d6fe9789e99a054d9722312bc5376cfed8e6f37",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_06_unsd.zip",
+          "size_bytes": 4262664,
+          "sha256": "e8f85c7e78842f03f44ecb4bcf23086743a5a8b0fece49c7b4ff35d36e6db7eb",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_08_unsd.zip",
+          "size_bytes": 2138271,
+          "sha256": "de29b31d285932d178cb25679f66e3c8a52665a027a004289b54c3680533610f",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_09_unsd.zip",
+          "size_bytes": 686670,
+          "sha256": "7da318dab95ab62711a5413a3b8a9e71cb5ce26c64ccab94c0a1437e15bfc061",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_10_unsd.zip",
+          "size_bytes": 313570,
+          "sha256": "bd542a8d4c6935e7338c6b618bd2aee7f9441a8318a009da29a435f59fbbab99",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_11_unsd.zip",
+          "size_bytes": 85243,
+          "sha256": "ff928c87ecf4d593cb75f8fae34995c72f235d033806fe6b10d8eb906f0fbdb9",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_12_unsd.zip",
+          "size_bytes": 2144232,
+          "sha256": "a70ff772eb51beb65494bef6428bf65d13ffc1925f8dfa5411f8d12abd3e1750",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_13_unsd.zip",
+          "size_bytes": 5842372,
+          "sha256": "a43870088d1c76a2ac79295b787c0968056407f0631beda81a2cc8ef18f21e7c",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_15_unsd.zip",
+          "size_bytes": 52208,
+          "sha256": "9238f08a6e9cb998928bb2dc60e520bc418b9191a2319b41c4f295904806cbbb",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_16_unsd.zip",
+          "size_bytes": 2208720,
+          "sha256": "bdbee599d714b2ab4a21dc49f2edc29be1954d393c7cf1d03e9e44a348a925b4",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_17_unsd.zip",
+          "size_bytes": 3700070,
+          "sha256": "b2f1bd6ad376a9fd138ef9f5babce6494c818dd02970e5ab400610e768d77c97",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_18_unsd.zip",
+          "size_bytes": 2451770,
+          "sha256": "f6870ed567eb395f81a86d42cd46dc58947dd185e584b91ad470ee9d43ff073b",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_19_unsd.zip",
+          "size_bytes": 2847911,
+          "sha256": "f5e9ccde72cd769f28d4230cf163befd73d7f1eeebc64181e930c5197459ea83",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_20_unsd.zip",
+          "size_bytes": 2461467,
+          "sha256": "f73c793b770c9ab811c26cc476aa7f935e1e061a300042ed9017f6bb4ce8f977",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_21_unsd.zip",
+          "size_bytes": 3304358,
+          "sha256": "61be07c1eddfb9c16e1724563dfcea0aedefbec89676ef94c22d36932fc1b779",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_22_unsd.zip",
+          "size_bytes": 2207728,
+          "sha256": "9e2c455ddf3c87e60e3625daa39f0fd028f11894b72e529f0396c07e3fafa1a5",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_23_unsd.zip",
+          "size_bytes": 2757031,
+          "sha256": "40c6b1849eb2d6d403c370834849fe41ed29e8e704ac8d80323098d96db44ab0",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_24_unsd.zip",
+          "size_bytes": 910695,
+          "sha256": "2a7303153faa35184ed5a8b2f23745c12990f79d237751c6a24e0283aa35ecd4",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_25_unsd.zip",
+          "size_bytes": 1475268,
+          "sha256": "dc03c503b9c8accab636deb890ac6e9d19ba8dab11dd495de348d26233f76698",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_26_unsd.zip",
+          "size_bytes": 3562329,
+          "sha256": "260b8223a69f1db7bd37de7dc16ea479d306bc5ef7fc17810d88eb59927f1535",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_27_unsd.zip",
+          "size_bytes": 4241776,
+          "sha256": "a6a73a6fef2a89011865b0e4492df76e54bd7059422815dddc6af8eb35c9a564",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_28_unsd.zip",
+          "size_bytes": 2729423,
+          "sha256": "ec864f19cd972d0212e8e675a3120ae69e91d286d899450332976e8233c35d14",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_29_unsd.zip",
+          "size_bytes": 4719514,
+          "sha256": "62730a4ad82b8a32e4afe21abe328768a5a60b93a5ea6b5b0646767fe8804c7a",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_30_unsd.zip",
+          "size_bytes": 1251341,
+          "sha256": "ecf439251f004379c31badd72694b85dddb5e117f87972318e7f83084aa6b02d",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_31_unsd.zip",
+          "size_bytes": 4198669,
+          "sha256": "06116fed82dad3e6f822ebd47534752b6d74c357addb8fde5ec310c8cfbbfdc3",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_32_unsd.zip",
+          "size_bytes": 403423,
+          "sha256": "8c52aa39276e18d8d0c27551009f031ec472c4eee25fb3d3f5769dab4f181ee7",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_33_unsd.zip",
+          "size_bytes": 623824,
+          "sha256": "a997ee27065773f0e98b0d594c74c1c9b4cf162ed5f4c2ea965fc6de936a17c0",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_34_unsd.zip",
+          "size_bytes": 3297421,
+          "sha256": "7e1b974f3f997a2f1428234e5f1da9539af643b80f758a14bcb75bef5c86ba90",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_35_unsd.zip",
+          "size_bytes": 1094278,
+          "sha256": "064e96a6da03291c055bc787ebad718818ecadeb0b7bb63a1db78df6c90481c2",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_36_unsd.zip",
+          "size_bytes": 4915541,
+          "sha256": "51f753fb7f546c0b1065e6e6179c5b65aec51a3fd6bcba5e420b66eeaecd48d6",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_37_unsd.zip",
+          "size_bytes": 4968142,
+          "sha256": "64f9110d2ecfb15642955dca27ea8c5ed9fba2f9db34865d7043905741d3fd69",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_38_unsd.zip",
+          "size_bytes": 2118508,
+          "sha256": "f9989f491de8f33cd73be15f90a103bb6895aca3843ce99c801f69d9ea539d7c",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_39_unsd.zip",
+          "size_bytes": 4403755,
+          "sha256": "99b05bf06c22f0b4f2aa9143a1f2ddadaecd8352019731be3029c310c0e758c9",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_40_unsd.zip",
+          "size_bytes": 4659187,
+          "sha256": "2e42c020de6bdf9dd404700c69f4cb920f0ed89e55b46cc1f7a38577c5a316af",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_41_unsd.zip",
+          "size_bytes": 3039665,
+          "sha256": "409c015da8d8cd7b5f39120cb670a4ede5b85fdac8188ccc3a44fc989f3954d1",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_42_unsd.zip",
+          "size_bytes": 5632936,
+          "sha256": "35f542f1fd62ec6131056a9087af481c2efd52b72edd81c758cf233051ec6fa4",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_44_unsd.zip",
+          "size_bytes": 306527,
+          "sha256": "06150ecda6fa94d1d4c4363be61eb0bda9b0810b4bbb8d3e092490375e157841",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_45_unsd.zip",
+          "size_bytes": 2599033,
+          "sha256": "837fc4acb982ac4cdc0a2cf011c32716aa0b39742d1b5cfda0d45f2782f5c4aa",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_46_unsd.zip",
+          "size_bytes": 3128227,
+          "sha256": "0ad16bbac58898dfcd064beddf2db3260b958c9841f58c298d88ebcb11cd4c03",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_47_unsd.zip",
+          "size_bytes": 4400663,
+          "sha256": "a0e15ad8a4cc8dec2be23ea4a9057eda43a05b7fca49507bd82b5c4e15c28d56",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_48_unsd.zip",
+          "size_bytes": 16901424,
+          "sha256": "dba039a65b4300d4ef1d62e83f1e8c4337b3e2d59562a710921d5d16c28b2124",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_49_unsd.zip",
+          "size_bytes": 1868257,
+          "sha256": "f150e09df1d92625d677f5feb595e71e9f0be669295508756fce06c555eea941",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_50_unsd.zip",
+          "size_bytes": 502620,
+          "sha256": "0d3c689e52f017c2c9a82929bbe48a52512bc1e3e7de5d1b5d3f9757134772ef",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_51_unsd.zip",
+          "size_bytes": 5347721,
+          "sha256": "b890ea45a92ff3cdf5646879c788471bfb72a7beefa3fdede5558d6d05d8bd88",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_53_unsd.zip",
+          "size_bytes": 2714011,
+          "sha256": "e53fe90855e76b7af1244a79aff79d9fd695f7cf6860a82a80a88b6619e9ba52",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_54_unsd.zip",
+          "size_bytes": 1605005,
+          "sha256": "90f66a7cb978e5fe2d65b604e341bfba41cc489957b9fdfeb98fdd47e1d750b1",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_55_unsd.zip",
+          "size_bytes": 4796942,
+          "sha256": "04da17543e5f69c6b7c1638894284ebd864addd402e34f12f1cd02be3d5e6bf7",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_56_unsd.zip",
+          "size_bytes": 1068605,
+          "sha256": "a36ae6b44739190eab9658230ace71b1ccee0ec052b0cacdaa86d1a8734fb119",
+          "rows": null
+        },
+        {
+          "path": "geographic/school_district_boundaries/by_state/tl_2024_72_unsd.zip",
+          "size_bytes": 30529,
+          "sha256": "2342662a87d98baa57387d14edd711636a6d76347c66f0b6aa498d931e28c589",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2024 vintage",
+      "geographic_coverage": "50 states + DC + PR (52 zips); no national bundle on Census",
+      "known_limitations": "Census doesn't publish a national UNSD bundle; per-state required.",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "tiger_2024_aiannh",
+      "source_name": "TIGER/Line 2024 \u2014 American Indian/Alaska Native/Native Hawaiian Areas",
+      "url_pulled": "https://www2.census.gov/geo/tiger/TIGER2024/AIANNH/tl_2024_us_aiannh.zip",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "TIGER 2024",
+      "files": [
+        {
+          "path": "geographic/reservation_boundaries/tl_2024_us_aiannh.zip",
+          "size_bytes": 9149754,
+          "sha256": "75e7bc8ccc1799f4813492f180d641ae2f8e3c98c7c2c137dbd0aa0845ee70cb",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2024 vintage",
+      "geographic_coverage": "national",
+      "tier": 1,
+      "status": "complete"
+    },
+    {
+      "source_id": "holc_mapping_inequality",
+      "source_name": "Mapping Inequality (HOLC redlining national GeoJSON)",
+      "url_pulled": "https://dsl.richmond.edu/panorama/redlining/static/mappinginequality.json",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "current as of 2026-05-12 pull",
+      "files": [
+        {
+          "path": "historical_mechanism/holc_redlining/mappinginequality.json",
+          "size_bytes": 10563682,
+          "sha256": "17f3b75e7485b27e48cfe17c93bd234e1ad4b025a24fc0cd0eab00cf812d6ff0",
+          "rows": null
+        }
+      ],
+      "year_coverage": "1935\u20131940 HOLC surveys",
+      "geographic_coverage": "~200 cities mapped (national GeoJSON, 10,154 features)",
+      "known_limitations": "Coverage limited to cities HOLC actually surveyed; ~200 cities total; the dsl.richmond shapefile + cities zip URLs serve SPA HTML and are not real downloads.",
+      "tier": 2,
+      "status": "complete",
+      "notes": "Properties incl. area_id, city, state, grade (A/B/C/D), category (Best/Still Desirable/Definitely Declining/Hazardous), residential/commercial/industrial flags."
+    },
+    {
+      "source_id": "eviction_lab",
+      "source_name": "Eviction Lab \u2014 Eviction Tracking System (multi-site weekly + monthly)",
+      "url_pulled": "https://eviction-lab-data-downloads.s3.amazonaws.com/ets/",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "2020\u20132021 ETS release (most recent multi-site bulk)",
+      "files": [
+        {
+          "path": "inequity_features/eviction_lab/all_sites_monthly_2020_2021.csv",
+          "size_bytes": 64670078,
+          "sha256": "622ca0d74518ff5ce30a88b8cb76b30adad142501fa7dd36857986544dc6e39d",
+          "rows": 983179
+        },
+        {
+          "path": "inequity_features/eviction_lab/all_sites_weekly_2020_2021.csv",
+          "size_bytes": 332851956,
+          "sha256": "522b27da09cac67e4870bca6411351d66cd4712caf7c6fcea639254c383cb638",
+          "rows": 4180620
+        },
+        {
+          "path": "inequity_features/eviction_lab/allstates_weekly_2020_2021.csv",
+          "size_bytes": 236379008,
+          "sha256": "11160ed53aafec2705bb04aa93edf7a36f2fdbfd24961a835e3a7442c6e38682",
+          "rows": 3566672
+        },
+        {
+          "path": "inequity_features/eviction_lab/data_dictionary_weekly_monthly.xlsx",
+          "size_bytes": 13123,
+          "sha256": "44c047e262a2f10fca8f896c465978316180253908681a33c4afc265ae7a8c68",
+          "rows": null
+        }
+      ],
+      "year_coverage": "2020\u20132021 weekly + monthly",
+      "geographic_coverage": "~40 cities + state-level for participating states",
+      "known_limitations": "ETS coverage is partial (~40 cities + 6-8 states); does not provide universal county-level eviction rates. Direct S3 URLs served without registration despite brief noting registration requirement.",
+      "tier": 2,
+      "status": "complete",
+      "notes": "Direct S3 (no auth required); 633 MB total across 3 CSVs + dictionary."
+    },
+    {
+      "source_id": "sundown_towns",
+      "source_name": "Loewen Sundown Towns Database (Tougaloo)",
+      "url_pulled": "https://justice.tougaloo.edu/sundown-towns/using-the-sundown-towns-database/state-map/",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "current as of 2026-05-12 pull",
+      "files": [
+        {
+          "path": "historical_mechanism/sundown_towns/state_map_page.html",
+          "size_bytes": 231028,
+          "sha256": "b3becc19df0d59bc70af59ba82ff70152af94e13e0dad8ac418e17a15f115cb8",
+          "rows": null
+        }
+      ],
+      "year_coverage": "historical (varies per town)",
+      "geographic_coverage": "captured state-map page only",
+      "known_limitations": "The Loewen database is interactive UI-driven; no bulk download endpoint exposed. State-map page captured for provenance; per-town drill-down requires manual UI navigation. For bulk extraction, screen-scrape across all states is required.",
+      "tier": 2,
+      "status": "partial",
+      "notes": "Index page only; bulk data not available without scraping."
+    },
+    {
+      "source_id": "nvdrs",
+      "source_name": "CDC NVDRS (restricted-access)",
+      "url_pulled": "https://www.cdc.gov/nvdrs/",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "n/a (not pulled)",
+      "files": [
+        {
+          "path": "outcomes/nvdrs/SOURCE_NOTE.md",
+          "size_bytes": 915,
+          "sha256": "605164c2cebe6cc630be8dcdbbd34f4193be5dd873400899af4a2961a1a76a1a",
+          "rows": null
+        }
+      ],
+      "year_coverage": "n/a",
+      "geographic_coverage": "n/a",
+      "known_limitations": "Substantially substituted by psx4-wq38 (Tier 1); incident-level requires restricted-access app.",
+      "tier": 3,
+      "status": "substituted_tier_1",
+      "notes": "See SOURCE_NOTE.md in target dir."
+    },
+    {
+      "source_id": "nibrs",
+      "source_name": "FBI NIBRS via Crime Data Explorer",
+      "url_pulled": "https://api.usa.gov/crime/fbi/cde/",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "n/a (not pulled)",
+      "files": [
+        {
+          "path": "outcomes/nibrs/SOURCE_NOTE.md",
+          "size_bytes": 1041,
+          "sha256": "604dd6474a30ca04c2a6c24bad3fa170edee80ce0f4b1c29df2a6d1115d5869a",
+          "rows": null
+        }
+      ],
+      "year_coverage": "n/a",
+      "geographic_coverage": "n/a",
+      "known_limitations": "api.data.gov API key required (no account creation per brief).",
+      "tier": 3,
+      "status": "registration_walled",
+      "notes": "See SOURCE_NOTE.md in target dir."
+    },
+    {
+      "source_id": "property_tax",
+      "source_name": "Property tax (national)",
+      "url_pulled": "various state-level portals",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "n/a (not pulled)",
+      "files": [
+        {
+          "path": "inequity_features/property_tax/SOURCE_NOTE.md",
+          "size_bytes": 1274,
+          "sha256": "980072c928247857c6631c905d0be94aa481b680762cd7998a106ca30fa0f242",
+          "rows": null
+        }
+      ],
+      "year_coverage": "n/a",
+      "geographic_coverage": "n/a",
+      "known_limitations": "No unified national source; Tax Foundation summary table is practical proxy.",
+      "tier": 3,
+      "status": "per_state_required",
+      "notes": "See SOURCE_NOTE.md in target dir."
+    },
+    {
+      "source_id": "bia_reservations",
+      "source_name": "BIA reservation data",
+      "url_pulled": "https://biamaps.geoplatform.gov/",
+      "pull_timestamp": "2026-05-13T02:06:36.421363Z",
+      "version_or_vintage": "n/a (not pulled)",
+      "files": [
+        {
+          "path": "geographic/reservation_boundaries/SOURCE_NOTE.md",
+          "size_bytes": 1085,
+          "sha256": "13bf00186afd3de9e40e90500827d3fc8825b7ca270a57c39dc52e3c7bcf2cab",
+          "rows": null
+        }
+      ],
+      "year_coverage": "n/a",
+      "geographic_coverage": "n/a",
+      "known_limitations": "Already covered by TIGER 2024 AIANNH (Tier 1).",
+      "tier": 3,
+      "status": "covered_by_tier_1",
+      "notes": "See SOURCE_NOTE.md in target dir."
+    }
+  ]
+}

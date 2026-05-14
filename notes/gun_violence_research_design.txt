@@ -1,0 +1,532 @@
+=== PAGE 1 ===
+Gun Violence Cross-Geography Study —
+Research Design
+Working title: Cross-Geography Decoupling of Race and Structural Inequity Effects on
+Gun Violence Rates in Working-Class American Communities
+Status: Pre-registration draft. Not yet executed. All hypotheses, cell definitions,
+matching criteria, and analytic decisions specified BEFORE data analysis begins.
+Pipeline position: Standalone methodology contribution. Substrate for Paper 6
+(methodology corpus) extension. Independent of Collatz publication queue timeline.
+§0. Pre-registration commitments
+This document is the pre-registration. Changes to anything below after data analysis
+begins must be (a) explicitly noted as post-hoc, (b) justified, (c) reported alongside the
+original specification.
+The design specifies:
+Cell definitions and population thresholds
+Working-class American matching profile
+Matching algorithm
+Sample size targets per cell
+Pre-registered hypotheses with falsification criteria
+Power-stratified claim framework
+Analysis sequence
+No looking at gun violence outcome data until all of the above is locked.
+§1. Research question
+Primary question: When race and structural inequity are decoupled (sampled across
+
+=== PAGE 2 ===
+cells where they vary independently rather than within-city where they covary), do
+inequity features predict gun violence rates independently of race composition, or does
+race composition retain independent predictive power beyond inequity features?
+Secondary question: Which inequity-feature effects generalize across geographic
+types (urban / suburban / rural) and which are specific to particular geographic
+mechanisms?
+Methodological question: Can the structural-prior partial-pooling framework that
+identified BLK×Center coupling in Sloan and a_final residue classes in NBAProjections
+identify analogous structural couplings in gun violence rate data across heterogeneous
+geographic types?
+§2. Cell definitions
+Each cell is defined by demographics × inequity × geographic-type. Working-class
+American profile match (§3) applied within each cell.
+Geographic granularity per cell type
+Urban cells: census tract (1,200–8,000 population). Population density
+homogeneity at tract scale is appropriate for urban areas.
+Suburban cells: census tract.
+Rural cells: county. Rural counties are functionally one community at the scale
+relevant to gun violence mechanisms.
+Reservation cells: reservation as primary unit, with multiple-tribe aggregation if
+needed.
+Cell typology
+Cell ID Race
+composition
+Inequity
+tier
+Geographic
+type Decoupling status
+UB-HI Black-majority
+(≥60%) High Urban tractCoupled (literature
+standard)
+UH-HI
+Hispanic-
+majority
+(≥60%)
+High Urban tractCoupled
+
+=== PAGE 3 ===
+UW-LI White-majority
+(≥70%)
+Low Urban tractControl
+SB-MC Black-majority
+(≥60%)
+Low-to-
+moderate
+Suburban
+tract
+Decoupled: high race,
+low inequity
+RW-HI White-majority
+(≥80%) High Rural
+county
+Decoupled: low race
+signal, high inequity
+RB-HI Black-majority
+(≥50%) High Rural
+county
+Coupled (rural
+mechanism)
+RH-HI
+Hispanic-
+majority
+(≥50%)
+High Rural
+county
+Coupled (rural
+mechanism)
+RNA-HI
+Native
+American
+(≥40%)
+High ReservationCoupled (distinct
+historical mechanism)
+Suburban
+transitionMixed VariableSuburban
+tract
+Reference for partial
+pooling
+Cell inclusion criteria
+Inequity tier is defined by composite z-score across four dimensions:
+Poverty rate (ACS B17001)
+Food access (USDA Food Access Research Atlas — low-income low-access status)
+School resource ratio (NCES per-pupil expenditure, student-teacher ratio at district
+level mapped to tract/county)
+Housing instability (ACS B25070 rent burden, B25003 owner/renter, eviction rate
+where available)
+High inequity: composite z-score ≥ +1.0 across at least 3 of 4 dimensions.
+Low inequity: composite z-score ≤ -0.5 across at least 3 of 4 dimensions.
+Moderate (excluded from primary analysis): composite z-score between -0.5 and
++1.0.
+Population threshold
+
+=== PAGE 4 ===
+Census tracts: ≥1,500 population (excludes extreme small-cell noise).
+Rural counties: ≥3,000 population (same reasoning).
+Reservations: ≥1,000 population if treated as standalone unit; otherwise aggregated.
+§3. Working-Class American matching profile
+Cells matched on the following dimensions to ensure cross-cell comparability on
+baseline characteristics that aren’t the inequity features being tested.
+Matching dimensions
+(1) Household income. Median household income between 30th and 65th percentile of
+national distribution. Excludes both extreme poverty (which has different dynamics) and
+middle-class-and-above (which is outside the working-class definition).
+(2) Education distribution. Working-class education profile: ≥40% high school
+graduate, ≤30% bachelor’s degree, balance of some-college / associate’s. Filters out
+both highly-educated affluent areas and areas with extremely low educational
+attainment that may have different dynamics.
+(3) Labor force participation. Employed civilian labor force ≥55% of working-age
+population. Filters out areas with extreme unemployment or out-of-labor-force
+populations.
+(4) Household structure. Married-couple-with-children + single-parent +
+multigenerational households combined ≥50%. Filters out extreme outliers (e.g.,
+college-town tracts with mostly student households).
+(5) Age structure. Working-age population (18-64) ≥55%. Filters out extreme outliers
+(retirement communities, military bases).
+(6) Stable population. Population change between recent ACS 5-year estimates ≤25%
+absolute. Filters out areas in rapid demographic transition that may have unstable
+outcome measurement.
+Matching algorithm
+Coarsened Exact Matching (CEM). Each dimension discretized into 3-5 bins, exact
+match required across all bins.
+Rationale: CEM is interpretable, robust, doesn’t require parametric assumptions about
+propensity score functional form. Standard in observational epidemiology for cross-
+
+=== PAGE 5 ===
+cohort matching.
+Alternative considered: Entropy Balancing. Rejected because it makes the matching less
+transparent and the structural-prior framework already handles continuous covariate
+adjustment in the model itself.
+Expected match rates
+Pre-matching cell sizes (from §1 estimates):
+UB-HI: 500-1000 tracts
+UH-HI: 500-1000 tracts
+UW-LI: 1000+ tracts
+SB-MC: 300-500 tracts
+RW-HI: 150-250 counties
+RB-HI: 60-100 counties
+RH-HI: 40-60 counties
+RNA-HI: 20-30 reservations
+After CEM matching to working-class American profile, expect 40-60% retention. Post-
+matching cell sizes:
+UB-HI: 200-500 tracts
+UH-HI: 200-500 tracts
+UW-LI: 400-800 tracts (subsampled to balance design)
+SB-MC: 120-300 tracts
+RW-HI: 60-150 counties
+RB-HI: 25-60 counties
+RH-HI: 16-36 counties
+RNA-HI: 8-18 reservations
+Subsampling for balance
+UW-LI control cell is over-populated. After matching, subsample to size of largest non-
+control cell to prevent control cell from dominating the partial-pooling structure.
+
+=== PAGE 6 ===
+§4. Outcome variable
+Primary outcome
+Gun violence rate per 100,000 population per year, averaged over a 5-year window
+(2019-2023 or most recent 5 years with complete data).
+Includes:
+Homicide by firearm (CDC WISQARS underlying cause of death, ICD-10 X93-X95,
+U01.4)
+Suicide by firearm (CDC WISQARS, ICD-10 X72-X74, Y22-Y24)
+Non-fatal injury by firearm (GVA incident records geocoded to unit)
+Excluded:
+Police-involved shootings (different mechanism, separate cell typology needed)
+Accidental shootings (different mechanism, sparse counts)
+Mass shootings as a category (rare events, statistically unstable at cell level)
+Secondary outcomes
+For sensitivity analyses:
+Homicide rate only (without suicide)
+Suicide rate only (different mechanism, included as separate analysis)
+Non-fatal injury rate only (GVA dependent)
+Data source per outcome component
+Component Source Granularity Lag
+Homicide rate WISQARS County 1-2 years
+Suicide rate WISQARS County 1-2 years
+Non-fatal injuryGVA Lat/lon → unit Current
+Aggregated rateConstructedUnit Pinned to WISQARS lag
+Reporting-rate adjustment
+
+=== PAGE 7 ===
+Cells differ in reporting infrastructure quality. Adjustment factor per cell type:
+Urban with good local PD reporting: 1.0 (reference)
+Urban with moderate reporting: 1.05-1.15
+Suburban: 1.10-1.20
+Rural county with media coverage: 1.20-1.40
+Rural county without strong media coverage: 1.30-1.60
+Reservation: 1.40-1.80 (highly variable, additional uncertainty)
+Adjustment factors derived from existing validation studies (JAMA Network Open 2023
+multi-source comparison; Trace methodology validation).
+Critical: adjustment factor uncertainty itself is propagated through the structural-prior
+framework. The model treats reporting rate as a latent variable per cell type with
+informed prior. We don’t pretend the adjustment is exact.
+§5. Independent variables (predictors)
+Race composition
+Census ACS B02001 (race alone), B03003 (Hispanic origin):
+Percent non-Hispanic white
+Percent non-Hispanic Black
+Percent Hispanic (any race)
+Percent non-Hispanic Asian
+Percent non-Hispanic Native American
+Percent non-Hispanic other / multi
+Inequity features (separated, not composite, for analysis)
+Food access: USDA Food Access Research Atlas
+Low-income low-access (LILA) status at 0.5 / 1 / 10 / 20 mile thresholds
+Tract-level percent of population with limited supermarket access
+School resources: NCES Common Core of Data
+
+=== PAGE 8 ===
+Per-pupil expenditure (district level, mapped to unit via boundary file)
+Student-teacher ratio
+Percent of teachers with ≥5 years experience
+Title I school proportion
+Property tax base: State assessor data (where accessible)
+Median property value (ACS B25077)
+Total assessed value per resident
+Property tax revenue per resident
+Housing instability: ACS + supplementary
+Median gross rent as percent of household income (B25070)
+Eviction rate (Eviction Lab data where available)
+Homeownership rate
+Housing cost burden (>30% income on housing)
+Historical mechanism markers (used for H_HISTORICAL_MECHANISM):
+HOLC redlining grade (Mapping Inequality project) — urban only
+Sundown town status (Loewen database) — applicable both urban and rural
+Voting Rights Act preclearance status (pre-2013) — applicable to relevant Southern
+counties
+Reservation status — for tribal cells
+Geographic-type indicator
+Categorical: Urban tract / Suburban tract / Rural county / Reservation
+Geographic-mechanism indicator
+For urban cells: redlining grade, historical Black migration patterns
+For rural cells: economic-collapse history (coal, manufacturing, agriculture), historical
+Reconstruction-era violence, sundown town status
+For reservations: tribe, treaty status, BIA jurisdiction status
+
+=== PAGE 9 ===
+§6. Pre-registered hypotheses
+Each hypothesis specifies what the cross-cell pattern would look like under different
+causal structures.
+H_INEQUITY (the existing-literature consensus position)
+Statement: Inequity features predict gun violence rates. Race composition predicts
+only through correlation with inequity features. After conditioning on the inequity
+feature set, race adds no significant independent predictive power.
+Predicted pattern in decoupled cells:
+SB-MC (Black-majority, low inequity): low gun violence rates, comparable to UW-LI
+RW-HI (white-majority, high inequity): high gun violence rates, comparable to other
+high-inequity cells
+Cross-cell variation in rates tracks inequity composite, not race composition
+Race coefficient in joint model approximately zero after inequity adjustment
+Falsification criterion: Race composition contributes ≥X% additional variance beyond
+inequity features in joint model. Specific X to be set after power analysis but before
+outcome data inspection — current target X = 15%.
+H_RACE_PURE
+Statement: Race composition independently predicts gun violence rates beyond what
+inequity features explain. Some causal pathway operates through race-specific
+mechanisms not captured by measured inequity features.
+Predicted pattern in decoupled cells:
+SB-MC: gun violence rates elevated relative to UW-LI despite comparable inequity
+RW-HI: gun violence rates not as elevated as urban Black-majority cells despite
+comparable inequity
+Race coefficient retains significance after inequity adjustment
+Falsification criterion: Race composition contributes <5% additional variance beyond
+inequity features. The hypothesis would be substantially weakened.
+H_INTERACTION
+Statement: Race × inequity interaction effects predict gun violence rates. Neither
+
+=== PAGE 10 ===
+marginal effect is sufficient; the joint co-occurrence is what matters.
+Predicted pattern:
+Maximum gun violence rates in cells where high-inequity Black-majority intersect
+(UB-HI > sum of marginal effects)
+Off-diagonal cells (SB-MC, RW-HI) have intermediate rates
+Interaction term is significant in joint model
+Falsification criterion: Race × inequity interaction explains <3% additional variance
+beyond main effects.
+H_HISTORICAL_MECHANISM
+Statement: Specific historical mechanisms (redlining, Reconstruction violence,
+economic collapse, treaty violations) explain geographic variation in gun violence rates
+beyond contemporary inequity features. The mechanism, not the current condition, is
+the causal driver.
+Predicted pattern:
+Cells with same contemporary inequity profile but different historical mechanisms
+have different gun violence rates
+Urban Black-majority high-inequity (post-redlining mechanism) ≠ Rural Black-
+majority high-inequity (post-Reconstruction mechanism) ≠ Rural white-majority
+high-inequity (post-industrial collapse mechanism)
+Historical mechanism markers add significant predictive power in joint model
+Falsification criterion: Historical mechanism markers add <5% additional variance
+beyond contemporary inequity features.
+H_GEOGRAPHIC_MECHANISM
+Statement: Specific inequity features have different effects in different geographic
+types. The food-access effect in urban tracts works through different intermediate
+pathways than the food-access effect in rural counties.
+Predicted pattern:
+Same inequity feature has different effect sizes (and possibly different signs) across
+geographic types
+Geographic-type × inequity-feature interaction is significant
+
+=== PAGE 11 ===
+Findings stratified by geographic type rather than averaged
+Falsification criterion: Geographic-type × inequity-feature interactions consistently
+<2% additional variance beyond main effects.
+Outcome possibilities
+The hypotheses are not mutually exclusive. The actual finding could be:
+H_INEQUITY + H_GEOGRAPHIC_MECHANISM (inequity drives, but through different
+pathways by geography)
+H_HISTORICAL_MECHANISM + H_INTERACTION (historical mechanism produces
+specific contemporary inequity × race interactions)
+H_RACE_PURE + H_HISTORICAL_MECHANISM (residual race effect after inequity
+adjustment is explained by historical mechanism)
+Various other combinations
+The pre-registration is what each hypothesis WOULD predict, not which hypothesis we
+expect to find.
+§7 . Power-stratified claim framework
+Each cell has different statistical power based on post-matching sample size. Claims
+about each cell are pre-stratified by the power tier.
+Tier 1: Strong claims (well-powered cells)
+Cells: UB-HI, UH-HI, UW-LI, SB-MC, RW-HI
+Sample sizes: post-matching ≥120 units per cell
+Claim language permitted: “Effect estimated at X with 95% CI [Y, Z]. Effect
+generalizes within this cell type. ”
+Effect sizes detectable: ≥10% relative variance contribution with 80% power
+Tier 2: Moderate claims (adequately-powered cells)
+Cells: RB-HI, RH-HI
+Sample sizes: post-matching 25-100 units per cell
+Claim language permitted: “Effect consistent with [direction]. Estimated effect size X
+
+=== PAGE 12 ===
+but cell-specific power limits precision; interpret with caveats. Findings hypothesized
+but not independently confirmed at cell level. ”
+Effect sizes detectable: ≥20% relative variance contribution with 80% power
+Tier 3: Hypothesis-generating (under-powered cells)
+Cells: RNA-HI
+Sample sizes: post-matching 8-18 units
+Claim language permitted: “Observed pattern consistent with [direction]. Cell-
+specific findings hypothesis-generating only. Larger study needed for independent
+confirmation. Pattern contributes to overall structural prior but not separately tested. ”
+Effect sizes detectable: ≥40% relative variance contribution with 80% power, or
+strong qualitative patterns
+Cross-cell claims
+Claims about cross-cell patterns (the decoupling hypothesis itself) use the joint sample
+across all cells. The full sample is well-powered for cross-cell effects even when
+individual cells are not. Cross-cell claim power is calculated separately.
+§8. Analytic plan
+Step 1: Data assembly
+Construct unit-level dataset with:
+Outcome: 5-year average gun violence rate per 100,000
+Race composition: 6 race/ethnicity categories
+Inequity features: 4 dimensions × multiple measures within each
+Historical mechanism markers
+Geographic-type indicator
+Reporting-rate prior (informed by validation literature)
+Working-class American matching status (binary, post-CEM)
+Step 2: Descriptive cell-level statistics
+
+=== PAGE 13 ===
+Pre-analysis report:
+Cell size after matching
+Cell-level mean rates and variances
+Cell-level inequity-feature distributions
+Cell-level race-composition distributions
+This is reported BEFORE any inferential analysis to allow methodological critique
+of the sample before findings color the interpretation.
+Step 3: Hierarchical Bayesian model
+Structural-prior partial-pooling framework. Model specification:
+Priors:
+Cell-type effects: hierarchical normal with shrinkage to overall mean
+Race effects: hierarchical normal
+Inequity effects: weakly informative normal centered on direction from existing
+literature
+Interactions: tighter shrinkage (regularizing prior to avoid overfitting)
+Reporting-rate adjustment: informed by validation studies
+Inference via Stan (HMC) or PyMC. Multiple chains, convergence diagnostics, posterior
+predictive checks.
+Step 4: Pre-registered tests
+gun_violence_rate[unit] ~ Negative-Binomial(mean[unit], dispersion[unit])
+log(mean[unit]) = 
+    intercept
+    + cell_type_effect[cell_type[unit]]
+    + race_effect[race_composition[unit]]
+    + inequity_effect[inequity_features[unit]]
+    + race_inequity_interaction[race_composition[unit], inequity_features[unit]]
+    + historical_mechanism_effect[historical_markers[unit]]
+    + geographic_type_inequity_interaction[geo_type[unit], inequity_features[unit]]
+    + reporting_rate_adjustment[geo_type[unit]]
+    + log(population[unit])  // exposure offset
+
+=== PAGE 14 ===
+For each hypothesis (H_INEQUITY, H_RACE_PURE, H_INTERACTION,
+H_HISTORICAL_MECHANISM, H_GEOGRAPHIC_MECHANISM):
+Compute the pre-registered test statistic (variance contribution, effect size,
+interaction significance)
+Compare against the pre-registered falsification criterion
+Report disposition (supported / not supported / inconclusive)
+Step 5: Robustness checks
+Alternative matching specifications (Mahalanobis distance, propensity score)
+Alternative inequity feature operationalizations
+Sensitivity to reporting-rate adjustment uncertainty
+Leave-one-state-out cross-validation
+Alternative outcome operationalizations (homicide only, suicide only)
+Step 6: Decoupled-cell focus analysis
+Specifically examine SB-MC and RW-HI cells (the decoupled cells the design exists for):
+Predicted rates under H_INEQUITY (low for SB-MC, high for RW-HI)
+Predicted rates under H_RACE_PURE (elevated for SB-MC, moderate for RW-HI)
+Observed rates
+Bayes factor for H_INEQUITY vs H_RACE_PURE based on decoupled-cell patterns
+specifically
+Step 7: Presentation stratified by cell tier
+Tier 1 cells get strong-claim language. Tier 2 cells get moderate-claim language. Tier 3
+cells get hypothesis-generating language. No averaging across tiers without explicit
+weighting by power.
+§9. Threats to validity and mitigations
+Threat 1: Reporting-rate adjustment mis-specification
+If the reporting-rate adjustment factors are systematically wrong, cells with under-
+
+=== PAGE 15 ===
+counted incidents will appear to have lower true rates than they do.
+Mitigation: (a) Propagate adjustment uncertainty through the model. (b) Run sensitivity
+analysis with alternative adjustment specifications. (c) Cross-validate with WISQARS
+mortality (which has uniform coverage) where available.
+Threat 2: Working-class profile mis-specification
+If the matching profile inadvertently excludes important variation, findings restrict to a
+more specific population than intended.
+Mitigation: (a) Pre-register the profile definition explicitly. (b) Report sample
+composition before analysis. (c) Sensitivity analysis with alternative profile cutoffs.
+Threat 3: Geographic granularity mismatch
+Urban tracts and rural counties differ in size by orders of magnitude. Aggregating at
+different scales can introduce artifacts.
+Mitigation: (a) Explicit geographic-type indicator in the model. (b) Multi-scale partial
+pooling. (c) Report effects per-100,000 standardized.
+Threat 4: Inequity feature collinearity
+The inequity features are correlated with each other and with race composition.
+Identifying independent effects is challenging.
+Mitigation: (a) Report joint model and marginal models. (b) Use cells where features
+decouple (the SB-MC and RW-HI cells exist for this). (c) Sensitivity analysis with feature
+subsets.
+Threat 5: Causal interpretation
+The design is observational. Findings are associational. Causal claims require additional
+assumptions.
+Mitigation: (a) Frame findings as predictive associations, not causal effects. (b)
+Discuss causal interpretation explicitly in limitations. (c) Note that decoupled-cell
+design provides stronger evidence for some causal pathways than within-city literature
+but doesn’t establish causality.
+Threat 6: Political reception
+Findings will be politicized regardless of methodology.
+Mitigation: (a) Pre-registration with public timestamp before analysis. (b) Report
+
+=== PAGE 16 ===
+findings whatever they show. (c) Methodologically rigorous framing makes selective use
+harder. (d) Cross-cutting findings (some support each side) reduce one-sided framing
+power.
+§10. Estimated timeline
+Assuming focused execution:
+Weeks 1-4: Data assembly. GVA scraping (or use of dxzys/Gun-Violence-Data
+dataset), WISQARS download, Census ACS pull, USDA Food Atlas, NCES extraction,
+HOLC mapping, redlining data, eviction data where available.
+Weeks 5-8: Cell construction and matching. CEM implementation, post-matching
+sample size verification, descriptive statistics.
+Weeks 9-12: Pre-registration finalization with public posting. Lock the design.
+Weeks 13-20: Model implementation (Stan/PyMC), prior calibration, convergence
+verification.
+Weeks 21-24: Primary analysis with pre-registered hypotheses. Robustness
+checks. Decoupled-cell focus analysis.
+Weeks 25-28: Writeup. Methods section emphasizing pre-registration and
+matching design.
+Weeks 29-32: Submission to target journal with pre-registration linked.
+Total: ~8 months focused execution. Can be compressed if multiple workstreams
+parallelize. Can extend if data integration encounters obstacles.
+Target journals
+Primary: American Journal of Public Health (AJPH). Methodologically rigorous, audience
+includes public health researchers and policy makers.
+Alternative: Social Science & Medicine (where Uzzi-Pollack-Porter Baltimore work was
+published — direct conversation with that literature).
+Alternative: Health Affairs (policy-oriented audience).
+Alternative: JAMA Network Open (methodologically rigorous, broad reach).
+
+=== PAGE 17 ===
+§11. Methodology corpus integration
+This study serves as the fifth (or sixth) substrate for Paper 6 (methodology corpus):
+“noise is misclassified structure” framework demonstrated across mathematics
+(Collatz), sports (NBAProjections), options (a_final_sp500), cancer (CancerResearch),
+and now gun violence cross-geography.
+The structural-prior partial-pooling approach used here is the same machinery as:
+BLK×Center coupling identification in Sloan paper
+a_final residue class partial pooling in NBAProjections
+WonkaResolve archetype coupling
+Options moneyness × tenor structural priors
+The decoupled-cells design extension (sampling where features vary independently) is
+a methodological contribution specific to this substrate that may transfer back to other
+corpus members.
+§12. Pre-registration commitments locked
+The following are locked before data analysis begins:
+1. Cell typology and thresholds (§2)
+2. Working-class American matching profile and CEM algorithm (§3)
+3. Outcome variable construction (§4)
+4. Independent variables and operationalizations (§5)
+5. Pre-registered hypotheses with falsification criteria (§6)
+6. Power-stratified claim framework (§7)
+7. Analytic plan and model specification (§8)
+8. Threats to validity and mitigations (§9)
+Any changes after data analysis begins are post-hoc and must be reported as such with
+rationale.
+
+=== PAGE 18 ===
+User additions

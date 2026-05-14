@@ -1,0 +1,51 @@
+# Secrets — NEVER commit
+.env
+.env.*
+*.key
+*_api_key*
+
+# Bulk raw data — derivable via _scripts/
+demographics/acs_5yr/*.parquet
+demographics/tract_boundaries/*.zip
+demographics/tract_boundaries/by_state/
+geographic/school_district_boundaries/by_state/
+geographic/reservation_boundaries/*.zip
+geographic/school_district_boundaries/*.zip
+inequity_features/usda_food_access/*.xlsx
+inequity_features/nces_school/Sdf*.zip
+inequity_features/nces_school/EDGE_*.zip
+inequity_features/nces_school/sdf*.txt
+inequity_features/health_access/*.xlsx
+inequity_features/eviction_lab/*.csv
+inequity_features/eviction_lab/*.xlsx
+historical_mechanism/holc_redlining/*.json
+historical_mechanism/holc_redlining/*.zip
+historical_mechanism/sundown_towns/*.html
+
+# WISQARS scraped data — derived from scrape_wisqars.py
+outcomes/wisqars/scrape_2019_2023/*.json
+outcomes/wisqars/scrape_2019_2023/*.parquet
+
+# GVA upstream clone (its own repo)
+outcomes/gva/Gun-Violence-Data/
+
+# Probe artifacts (binary screenshots + HTML dumps)
+_scripts/probe_output/
+
+# Provenance logs (large + transient)
+provenance/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp

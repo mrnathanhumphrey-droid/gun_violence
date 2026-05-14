@@ -1,0 +1,9 @@
+,spec_equiv_4_of_5,lenient_3_of_5,very_lenient_2_of_5,mean_z_ge_1
+UB-HI,10,101,761,90
+UH-HI,3,177,1170,195
+UW-LI,1633,4200,6891,3179
+SB-MC,684,591,318,618
+RW-HI,0,3,72,0
+RB-HI,0,3,34,4
+RH-HI,0,2,25,16
+RNA-HI,0,1,7,3
