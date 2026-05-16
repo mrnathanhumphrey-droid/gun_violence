@@ -35,7 +35,7 @@ def query_all_years_national_county(intent="0"):
                 "fiveyr1": "0", "fiveyr2": "199",
                 "c_age1": "0", "c_age2": "199",
                 "intent": intent,
-                "mech": "20810",          # firearm
+                "mech": "20890",          # firearm
                 "race": "0",
                 "sex": "1,2,3",            # all
                 "race_yr": "2",
@@ -106,7 +106,7 @@ for yr in ["2019","2020","2021","2022","2023"]:
                 "ethnicty": "0", "agebuttn": "ALL",
                 "fiveyr1": "0", "fiveyr2": "199",
                 "c_age1": "0", "c_age2": "199",
-                "intent": "0", "mech": "20810", "race": "0", "sex": "1,2,3",
+                "intent": "0", "mech": "20890", "race": "0", "sex": "1,2,3",
                 "race_yr": "2", "state": "00", "tbi": "0", "urbrul": "0",
                 "year1": yr, "year2": yr,
                 "groupby1": "AGEGP", "ypllage": "65",
@@ -147,7 +147,7 @@ for label, code in intent_codes.items():
                 "ethnicty": "0", "agebuttn": "ALL",
                 "fiveyr1": "0", "fiveyr2": "199",
                 "c_age1": "0", "c_age2": "199",
-                "intent": code, "mech": "20810", "race": "0", "sex": "1,2,3",
+                "intent": code, "mech": "20890", "race": "0", "sex": "1,2,3",
                 "race_yr": "2", "state": "00", "tbi": "0", "urbrul": "0",
                 "year1": "2019", "year2": "2023",
                 "groupby1": "AGEGP", "ypllage": "65",

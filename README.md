@@ -4,7 +4,7 @@
 
 **Author:** Nathan Humphrey
 
-**Status:** Pre-registration v2. Design locked; outcome data scraped but not yet inspected at the cell-rate level. Analysis phase pending.
+**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3 hierarchical Stan fits LANDED with clean diagnostics. Two CI-clean structural findings (race × inequity interaction; HOLC redlining as historical mechanism). v0.4 backlog: sundown towns scrape + per-geo reporting-rate + N expansion.
 
 **Pre-registration timestamp:** This repository's initial commit serves as the pre-registration timestamp. The `notes/gun_violence_research_design.pdf` v1 design document was finalized 2026-05-13 (PDF metadata); the `notes/pre_reg_redline.md` v2 revisions were finalized 2026-05-14 before any outcome-rate inspection.
 
@@ -22,6 +22,39 @@ Five pre-registered hypotheses with quantitative falsification criteria:
 - **H_GEOGRAPHIC_MECHANISM** — Same inequity features have different effects across urban/suburban/rural. (Falsified if interactions <2% variance consistently.)
 
 Findings will be reported with explicit power-tier stratification per `notes/gun_violence_research_design.pdf` §7.
+
+---
+
+## Results — three fits landed
+
+**v0.1 (2026-05-14):** baseline hierarchical neg-binom across 8 cells, 456 county-units. UW-LI within-cell inequity slope **+1.42 [+1.11, +1.71]** (tightest CI in fit), pct_black main +0.65, pct_family_HH −0.14. Headline: inequity composite operates everywhere, even in the low-inequity white control cell.
+
+**v0.2 (2026-05-14):** added race × inequity interaction + geo-type fixed effects + decomposed log-rate components. **Race × inequity = −0.482 [−0.878, −0.142]**, CI clean. pct_black main strengthens to +0.89. **v0.1's UW-LI +1.42 slope drops to +0.525 with CI through zero** — much of v0.1's "inequity everywhere" was demographic-composition signal the additive model couldn't separate. Variance-decomp cross-term −18: cell baseline and race composition strongly anti-correlated (identifiability tension, model still fits clean).
+
+**v0.3 (2026-05-15):** added HOLC redlining (county share-D) + VRA Section 4(b) preclearance markers. **HOLC share-D = +0.682 [+0.324, +1.049], CI clean** — historical New Deal-era redlining still predicts present-day firearm-death rates *after* controlling for current race + inequity + geo + SES. VRA Section 4(b) null. Race × inequity replicates v0.2 (−0.453 vs −0.482).
+
+### §6 disposition reading
+
+| Hypothesis | Verdict |
+|---|---|
+| H_INEQUITY (pure) | Falsified |
+| H_RACE_PURE | Falsified |
+| **H_INTERACTION** | **SUPPORTED (replicated v0.2 → v0.3)** |
+| **H_HISTORICAL_MECHANISM** | **PARTIALLY SUPPORTED — HOLC clean, VRA null** |
+| H_GEOGRAPHIC_MECHANISM | Inconclusive (geo absorbed into cell) |
+
+### Key plain-English finding
+
+In US counties at this resolution, race composition and structural inequity are inextricably linked — every modeling attempt to separate them with additive terms runs into identifiability tension that surfaces as a clean negative race × inequity interaction (−0.48, CI excludes zero). HOLC redlining adds an independent built-environment historical-mechanism signal on top of all of that, with effect size ~exp(0.68) ≈ 2× per unit increase in county-level D-grade share.
+
+### Deferred to v0.4
+
+1. Sundown towns scrape (50-state, parser pending)
+2. Per-geo reporting-rate adjustment (needs NVDRS data)
+3. N expansion (state-level rollup or block-group disaggregation) to tighten cell ↔ race identifiability
+4. External validation pass against published gun-violence × inequity × redlining studies
+
+Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 + HOLC + VRA).
 
 ---
 

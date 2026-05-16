@@ -29,6 +29,18 @@ outcomes/wisqars/scrape_2019_2023/*.parquet
 # GVA upstream clone (its own repo)
 outcomes/gva/Gun-Violence-Data/
 
+# Analysis: heavy artifacts (Stan exes, chain CSVs, full posteriors)
+analysis/*.exe
+analysis/smoke_output/
+analysis/production_v0_*/stan_csvs/
+analysis/production_v0_*/posterior_full.parquet
+
+# Geographic: TIGER 2024 county shapefile (re-downloadable from Census)
+geographic/tiger_county_2024/
+
+# Historical mechanism raw
+historical_mechanism/voting_rights_act/
+
 # Probe artifacts (binary screenshots + HTML dumps)
 _scripts/probe_output/
 
