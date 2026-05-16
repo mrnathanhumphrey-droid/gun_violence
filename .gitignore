@@ -38,6 +38,12 @@ analysis/production_v0_*/posterior_full.parquet
 # Geographic: TIGER 2024 county shapefile (re-downloadable from Census)
 geographic/tiger_county_2024/
 
+# Census Places gazetteer (re-downloadable from Census)
+geographic/census_places_gaz_2024/
+
+# Sundown towns raw HTML scrape archive
+historical_mechanism/sundown_towns/*.html
+
 # Historical mechanism raw
 historical_mechanism/voting_rights_act/
 
