@@ -1,0 +1,58 @@
+20:56:36 - cmdstanpy - INFO - CmdStan start processing
+20:56:36 - cmdstanpy - INFO - Chain [1] start processing
+20:56:36 - cmdstanpy - INFO - Chain [2] start processing
+20:56:36 - cmdstanpy - INFO - Chain [3] start processing
+20:56:36 - cmdstanpy - INFO - Chain [4] start processing
+21:00:31 - cmdstanpy - INFO - Chain [2] done processing
+21:00:41 - cmdstanpy - INFO - Chain [4] done processing
+21:00:51 - cmdstanpy - INFO - Chain [3] done processing
+21:01:14 - cmdstanpy - INFO - Chain [1] done processing
+21:01:15 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Consider re-running with show_console=True if the above output is unclear!
+=== v0.5 Arm B: fold 2 held out, training on other 4 folds ===
+
+  total units: 718  training (not in fold 2): 570  held-out: 148
+
+[compile + sample] firing Stan v0.4 fit on fold-2-held-out training set ...
+  sampling complete in 279.2s wall (seed 20260702)
+
+[diagnostics]:
+  Checking sampler transitions treedepth.
+  Treedepth satisfactory for all transitions.
+  
+  Checking sampler transitions for divergences.
+  No divergent transitions found.
+  
+  Checking E-BFMI - sampler transitions HMC potential energy.
+  E-BFMI satisfactory.
+  
+  Rank-normalized split effective sample size satisfactory for all parameters.
+  
+  Rank-normalized split R-hat values satisfactory for all parameters.
+  
+  Processing complete, no problems detected.
+  
+
+[3 target coefficients on fold 2 training set]:
+  beta_race_x_ineq       mean=-0.576 [-0.935, -0.243]  CI CLEAN
+  beta_holc_share_D      mean=+1.010 [+0.683, +1.340]  CI CLEAN
+  beta_sundown_log1p     mean=+0.125 [+0.050, +0.198]  CI CLEAN
+
+Saved fold_2_summary.json
+=== fold 2 done in 304.9s ===

@@ -1,0 +1,61 @@
+20:56:41 - cmdstanpy - INFO - CmdStan start processing
+20:56:41 - cmdstanpy - INFO - Chain [1] start processing
+20:56:41 - cmdstanpy - INFO - Chain [2] start processing
+20:56:41 - cmdstanpy - INFO - Chain [3] start processing
+20:56:41 - cmdstanpy - INFO - Chain [4] start processing
+21:00:50 - cmdstanpy - INFO - Chain [2] done processing
+21:01:06 - cmdstanpy - INFO - Chain [4] done processing
+21:01:09 - cmdstanpy - INFO - Chain [3] done processing
+21:01:19 - cmdstanpy - INFO - Chain [1] done processing
+21:01:19 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+	Exception: neg_binomial_2_log_lpmf: Precision parameter is 0, but must be positive finite! (in 'fit_production_v0_4.stan', line 100, column 2 to column 43)
+Consider re-running with show_console=True if the above output is unclear!
+=== v0.5 Arm B: fold 3 held out, training on other 4 folds ===
+
+  total units: 718  training (not in fold 3): 572  held-out: 146
+
+[compile + sample] firing Stan v0.4 fit on fold-3-held-out training set ...
+  sampling complete in 278.9s wall (seed 20260703)
+
+[diagnostics]:
+  Checking sampler transitions treedepth.
+  Treedepth satisfactory for all transitions.
+  
+  Checking sampler transitions for divergences.
+  No divergent transitions found.
+  
+  Checking E-BFMI - sampler transitions HMC potential energy.
+  E-BFMI satisfactory.
+  
+  Rank-normalized split effective sample size satisfactory for all parameters.
+  
+  Rank-normalized split R-hat values satisfactory for all parameters.
+  
+  Processing complete, no problems detected.
+  
+
+[3 target coefficients on fold 3 training set]:
+  beta_race_x_ineq       mean=-0.683 [-1.069, -0.318]  CI CLEAN
+  beta_holc_share_D      mean=+0.898 [+0.567, +1.223]  CI CLEAN
+  beta_sundown_log1p     mean=+0.189 [+0.111, +0.269]  CI CLEAN
+
+Saved fold_3_summary.json
+=== fold 3 done in 304.2s ===

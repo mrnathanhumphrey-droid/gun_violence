@@ -4,7 +4,7 @@
 
 **Author:** Nathan Humphrey
 
-**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3, v0.4 hierarchical Stan fits LANDED with clean diagnostics. **Three CI-clean structural findings**: race × inequity interaction (replicated 3×), HOLC redlining intensity, sundown-towns intensity. H_HISTORICAL_MECHANISM disposition upgraded from PARTIALLY SUPPORTED (v0.3) to **SUPPORTED** (v0.4). v0.5 backlog: per-geo reporting-rate (CDC-blocked), N expansion, external validation pass.
+**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3, v0.4 hierarchical Stan fits LANDED with clean diagnostics. **Three CI-clean structural findings**: race × inequity interaction (replicated 3×), HOLC redlining intensity, sundown-towns intensity. H_HISTORICAL_MECHANISM disposition upgraded from PARTIALLY SUPPORTED (v0.3) to **SUPPORTED** (v0.4). **v0.5 self-replication LANDED (Arm B)**: 5-fold cell-stratified random county split — all 3 findings CI-clean in **5 of 5 folds** (pre-reg required ≥4 of 5) ⇒ STRONG_REPLICATION (3/3). Arm A (2014–2018 time-window) deferred pending CDC WONDER XML API blockers. Joint v0.5 disposition: **PARTIAL_REPLICATION** pending Arm A.
 
 **Pre-registration timestamp:** This repository's initial commit serves as the pre-registration timestamp. The `notes/gun_violence_research_design.pdf` v1 design document was finalized 2026-05-13 (PDF metadata); the `notes/pre_reg_redline.md` v2 revisions were finalized 2026-05-14 before any outcome-rate inspection.
 
@@ -61,14 +61,31 @@ The pre-registered §6 disposition rule fires `H_HISTORICAL_MECHANISM = SUPPORTE
 
 The corpus methodology contribution: structural priors over residual classes + explicit historical-mechanism markers surface findings that an additive baseline with only current race + SES + geo would miss entirely. **Three structural findings in one substrate, all defensible to the locked pre-reg's CI threshold, all directly visible in present-day mortality data, all anchored to specific historical policies whose implementation dates are documented in the archival record.**
 
-### Deferred to v0.5
+### v0.5 self-replication (Arm B landed; Arm A deferred)
 
-1. Per-geo reporting-rate adjustment (needs NVDRS county data; CDC access request)
-2. N expansion (block-group disaggregation OR state-level rollup) to tighten cell ↔ race identifiability tension
-3. External validation pass against published gun-violence × redlining × sundown studies
-4. Apply the structural-prior partial-pooling framework (the methodology corpus's core mechanism) DIRECTLY to the historical-mechanism × cell residual structure rather than treating it as fixed-effect adjustment
+Pre-registered at commit `b162e71`. Two independent self-replication axes:
 
-Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition).
+- **Arm B — 5-fold cell-stratified random county split (SEED 20260602).** Re-fit the v0.4 model on each of 5 random training folds (≈570 units each). Per-finding pass rule: ≥4 of 5 folds' posterior CI clean on the correct side of zero.
+  - race × inequity (negative): **5 of 5 folds clean** ✓ — mean across folds −0.534, range [−0.683, −0.396]
+  - HOLC share-D (positive): **5 of 5 folds clean** ✓ — mean across folds +0.913, range [+0.794, +1.010]
+  - sundown log1p (positive): **5 of 5 folds clean** ✓ — mean across folds +0.162, range [+0.125, +0.189]
+  - **Arm B aggregate: STRONG_REPLICATION (3/3).** All three findings robust to random county subsetting.
+
+- **Arm A — 2014–2018 pre-COVID outcome window: DEFERRED.** WISQARS API only serves 2018+; pivoted to CDC WONDER MCD-ICD-10 XML API; WONDER auto-includes default 113-cause-list selections that conflict with raw ICD-10 firearm filter mode, requires reverse-engineering the finder-tool state machine OR pivot to NBER MCD raw mortality files (~2 GB).
+
+**Joint v0.5 disposition: PARTIAL_REPLICATION pending Arm A.** Arm B alone is a real result — the three structural findings hold across 5 random county subsets at n ≈ 570 each, with no fold's posterior CI crossing zero in the wrong direction.
+
+Full v0.5 writeup: [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md).
+
+### Deferred to v0.6 (and beyond)
+
+1. **v0.6 block-group disaggregation.** ACS 5-yr block-group fetch landed (13 tables). Build cell assignment at block-group resolution to push N from ≈456 → ≈30,000+ units.
+2. **Tier 3 (queued):** Bayly et al. 2024 sundown source replication — fetch Bayly's canonical dataset, swap into v0.4 in place of the Tougaloo scrape, compare sundown coefficient.
+3. **Arm A revisit:** dedicated session for WONDER finder-tool replay OR NBER MCD raw mortality fetch.
+4. Per-geo reporting-rate adjustment (needs NVDRS county data; CDC access request).
+5. Apply the structural-prior partial-pooling framework (the methodology corpus's core mechanism) DIRECTLY to the historical-mechanism × cell residual structure rather than treating it as fixed-effect adjustment.
+
+Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition), [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md) (v0.5 self-replication, Arm B landed + Arm A deferred).
 
 ---
 
