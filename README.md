@@ -4,7 +4,18 @@
 
 **Author:** Nathan Humphrey
 
-**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3, v0.4 hierarchical Stan fits LANDED with clean diagnostics. **Three CI-clean structural findings**: race × inequity interaction (replicated 3×), HOLC redlining intensity, sundown-towns intensity. H_HISTORICAL_MECHANISM disposition upgraded from PARTIALLY SUPPORTED (v0.3) to **SUPPORTED** (v0.4). **v0.5 self-replication LANDED (Arm B)**: 5-fold cell-stratified random county split — all 3 findings CI-clean in **5 of 5 folds** (pre-reg required ≥4 of 5) ⇒ STRONG_REPLICATION (3/3). Arm A (2014–2018 time-window) deferred pending CDC WONDER XML API blockers (NBER MCD ABORTED — public-use files strip geography since 2005). **Tier 3 sundown-source replication LANDED**: Rigby et al. 2025 (*Scientific Data*) canonical dataset swapped for Tougaloo — sundown coefficient **+0.120** [+0.029, +0.216] vs Tougaloo **+0.128**, Δ=0.008 ⇒ STRONG_REPLICATION.
+**Status:** Pre-registration v2 locked. v0.1 → v0.6 hierarchical Stan fits LANDED with clean diagnostics. Three CI-clean structural findings tested across three independent robustness axes:
+
+| Finding | v0.4 baseline | v0.5 Arm B (sample) | Tier 3 Rigby (source) | v0.6 BG (geography) | Robust axes |
+|---|---|---|---|---|---|
+| **race × inequity (−0.45)** | ✓ | ✓ 5/5 folds | ✓ Δ=0.016 | ✓ Δ=0.014 | **3 / 3** |
+| **HOLC redlining (+0.70)** | ✓ | ✓ 5/5 folds | ✓ Δ=−0.012 | ✓ Δ=+0.024 | **3 / 3** |
+| Sundown towns (+0.13) | ✓ | ✓ 5/5 folds | ✓ Δ=−0.008 | ✗ CI spans 0 | 2 / 3 |
+| VRA Section 4(b) | null | n/a | n/a | NEW CI-clean +0.129 | (emerges at BG) |
+
+Race × inequity entanglement and HOLC redlining survived all three robustness tests (source swap, 5-fold sample resampling, BG-level geography refinement) — these are the study's load-bearing claims. The sundown coefficient at tract-level survives source-swap and sample-resampling but not BG-level refinement; this is documented as an aggregation-level sensitivity. VRA emerges as a new CI-clean finding at BG-level after being null at tract level.
+
+Arm A (2014–2018 pre-COVID outcome window) deferred — CDC WONDER XML API blocked; NBER MCD ABORTED (public-use mortality files strip geography since 2005, restricted-use only).
 
 **Pre-registration timestamp:** This repository's initial commit serves as the pre-registration timestamp. The `notes/gun_violence_research_design.pdf` v1 design document was finalized 2026-05-13 (PDF metadata); the `notes/pre_reg_redline.md` v2 revisions were finalized 2026-05-14 before any outcome-rate inspection.
 
@@ -93,14 +104,31 @@ Concordance at county-unit level: 91.7% identical classification, Pearson r betw
 
 Full Tier 3 writeup: [analysis/REPORT_TIER3_RIGBY_2026_05_15.md](analysis/REPORT_TIER3_RIGBY_2026_05_15.md).
 
-### Deferred to v0.6 (and beyond)
+### v0.6 — Block-group geography refinement LANDED (2026-05-15)
 
-1. **v0.6 block-group disaggregation.** ACS 5-yr block-group fetch landed (13 tables). Build cell assignment at block-group resolution to refine within-county cell signal.
-2. **Arm A revisit:** dedicated session for WONDER finder-tool replay OR NCHS Restricted-Use Data application (3-6 mo).
+Re-fit v0.4 model with urban/suburban cell membership assigned at BLOCK GROUP level (4-5× finer geography than tract) and BGs aggregated within county to (county, cell) units. Rural cells unchanged at county level. Total units: 516 (+13% vs v0.4's 456). SB-MC cell nearly doubles (67 → 125) — sub-tract Black-suburban BGs surfaced.
+
+| Coefficient | v0.4 (tract) | v0.6 (BG) | Δ | Status |
+|---|---|---|---|---|
+| race × inequity | −0.450 [−0.803, −0.133] | **−0.436** [−0.716, −0.168] | +0.014 | REPLICATES |
+| HOLC share-D | +0.701 [+0.351, +1.055] | **+0.725** [+0.410, +1.033] | +0.024 | REPLICATES |
+| sundown_log1p | +0.128 [+0.036, +0.219] | +0.009 [−0.077, +0.094] | −0.119 | CI now spans 0 |
+| VRA Section 4(b) | +0.071 [−0.023, +0.181] | **+0.129** [+0.032, +0.226] | +0.058 | NEW: CI clean+ |
+
+**Reading.** The sundown coefficient at tract-level was partly aggregation-dependent — joining county-level sundown counts onto a design where the same county can appear in multiple cell-rows leaves the marginal coefficient sensitive to how many cell-rows-per-county the design produces. BG-level refinement nearly doubles SB-MC, and the sundown signal is "spread" across more cell-rows of the same sundown-flagged county, weakening the marginal. This is consistent with sundown's structural-racism mechanism operating at the **whole-county** level (the way Bayly-style/Rigby-style historical recording works), not within specific cell-types.
+
+Race × inequity and HOLC are robust to this re-aggregation — these findings survive ALL THREE independent robustness axes the study has tested. VRA Section 4(b) emerges as a new positive finding at BG level after being null at tract level; this needs replication on an independent VRA dataset before claiming.
+
+Full v0.6 writeup: [analysis/REPORT_v0_6_2026_05_15.md](analysis/REPORT_v0_6_2026_05_15.md).
+
+### Deferred (post-v0.6)
+
+1. **Arm A revisit:** dedicated session for WONDER finder-tool replay OR NCHS Restricted-Use Data application (3-6 mo).
+2. **VRA replication** at BG level on an independent VRA dataset.
 3. Per-geo reporting-rate adjustment (needs NVDRS county data; CDC access request).
 4. Apply the structural-prior partial-pooling framework (the methodology corpus's core mechanism) DIRECTLY to the historical-mechanism × cell residual structure rather than treating it as fixed-effect adjustment.
 
-Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition), [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md) (v0.5 self-replication, Arm B landed + Arm A deferred), [analysis/REPORT_TIER3_RIGBY_2026_05_15.md](analysis/REPORT_TIER3_RIGBY_2026_05_15.md) (Tier 3 sundown source replication).
+Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition), [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md) (v0.5 self-replication, Arm B landed + Arm A deferred), [analysis/REPORT_TIER3_RIGBY_2026_05_15.md](analysis/REPORT_TIER3_RIGBY_2026_05_15.md) (Tier 3 sundown source replication), [analysis/REPORT_v0_6_2026_05_15.md](analysis/REPORT_v0_6_2026_05_15.md) (v0.6 BG geography refinement).
 
 ---
 
