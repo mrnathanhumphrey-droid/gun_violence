@@ -4,7 +4,7 @@
 
 **Author:** Nathan Humphrey
 
-**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3, v0.4 hierarchical Stan fits LANDED with clean diagnostics. **Three CI-clean structural findings**: race × inequity interaction (replicated 3×), HOLC redlining intensity, sundown-towns intensity. H_HISTORICAL_MECHANISM disposition upgraded from PARTIALLY SUPPORTED (v0.3) to **SUPPORTED** (v0.4). **v0.5 self-replication LANDED (Arm B)**: 5-fold cell-stratified random county split — all 3 findings CI-clean in **5 of 5 folds** (pre-reg required ≥4 of 5) ⇒ STRONG_REPLICATION (3/3). Arm A (2014–2018 time-window) deferred pending CDC WONDER XML API blockers. Joint v0.5 disposition: **PARTIAL_REPLICATION** pending Arm A.
+**Status:** Pre-registration v2 locked. v0.1, v0.2, v0.3, v0.4 hierarchical Stan fits LANDED with clean diagnostics. **Three CI-clean structural findings**: race × inequity interaction (replicated 3×), HOLC redlining intensity, sundown-towns intensity. H_HISTORICAL_MECHANISM disposition upgraded from PARTIALLY SUPPORTED (v0.3) to **SUPPORTED** (v0.4). **v0.5 self-replication LANDED (Arm B)**: 5-fold cell-stratified random county split — all 3 findings CI-clean in **5 of 5 folds** (pre-reg required ≥4 of 5) ⇒ STRONG_REPLICATION (3/3). Arm A (2014–2018 time-window) deferred pending CDC WONDER XML API blockers (NBER MCD ABORTED — public-use files strip geography since 2005). **Tier 3 sundown-source replication LANDED**: Rigby et al. 2025 (*Scientific Data*) canonical dataset swapped for Tougaloo — sundown coefficient **+0.120** [+0.029, +0.216] vs Tougaloo **+0.128**, Δ=0.008 ⇒ STRONG_REPLICATION.
 
 **Pre-registration timestamp:** This repository's initial commit serves as the pre-registration timestamp. The `notes/gun_violence_research_design.pdf` v1 design document was finalized 2026-05-13 (PDF metadata); the `notes/pre_reg_redline.md` v2 revisions were finalized 2026-05-14 before any outcome-rate inspection.
 
@@ -71,21 +71,36 @@ Pre-registered at commit `b162e71`. Two independent self-replication axes:
   - sundown log1p (positive): **5 of 5 folds clean** ✓ — mean across folds +0.162, range [+0.125, +0.189]
   - **Arm B aggregate: STRONG_REPLICATION (3/3).** All three findings robust to random county subsetting.
 
-- **Arm A — 2014–2018 pre-COVID outcome window: DEFERRED.** WISQARS API only serves 2018+; pivoted to CDC WONDER MCD-ICD-10 XML API; WONDER auto-includes default 113-cause-list selections that conflict with raw ICD-10 firearm filter mode, requires reverse-engineering the finder-tool state machine OR pivot to NBER MCD raw mortality files (~2 GB).
+- **Arm A — 2014–2018 pre-COVID outcome window: DEFERRED.** WISQARS API only serves 2018+; pivoted to CDC WONDER MCD-ICD-10 XML API; WONDER auto-includes default 113-cause-list selections that conflict with raw ICD-10 firearm filter mode. NBER MCD alternative ABORTED — NCHS strips state/county/MSA from all public-use mortality files since 2005; county-level requires Restricted-Use Data application (3-6 month process + DUA).
 
 **Joint v0.5 disposition: PARTIAL_REPLICATION pending Arm A.** Arm B alone is a real result — the three structural findings hold across 5 random county subsets at n ≈ 570 each, with no fold's posterior CI crossing zero in the wrong direction.
 
 Full v0.5 writeup: [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md).
 
+### Tier 3 sundown-source replication LANDED (2026-05-15)
+
+Pre-reg-queued test of whether the v0.4 sundown × firearm coefficient is specific to the Tougaloo/Loewen DB coding, or reflects the underlying mid-20th-century-racial-exclusion signal. Swapped Tougaloo for **Rigby et al. 2025**, *A national data set of historical US sundown towns for quantitative analysis*, *Scientific Data* ([DOI 10.1038/s41597-024-04330-9](https://doi.org/10.1038/s41597-024-04330-9); dataset OSF [10.17605/OSF.IO/FH7R6](https://osf.io/fh7r6/)). Identical v0.4 model, identical controls; only the sundown columns change.
+
+| Coefficient | v0.4 (Tougaloo) | Tier 3 (Rigby 2025) | Δ |
+|---|---|---|---|
+| sundown_log1p | **+0.128** [+0.036, +0.219] | **+0.120** [+0.029, +0.216] | −0.008 |
+| race × inequity | −0.450 [−0.803, −0.133] | −0.434 [−0.793, −0.111] | +0.016 |
+| HOLC share-D | +0.701 [+0.351, +1.055] | +0.689 [+0.331, +1.052] | −0.012 |
+
+**All three CI-clean, all three replicate. Sundown Δ = 0.008 — essentially identical to 1 decimal.** Pre-reg decision rule (±0.1 around v0.4 reference + CI clean positive) PASSED with the actual delta 12× tighter than the threshold. Tier 3 verdict: **STRONG_REPLICATION (sundown).**
+
+Concordance at county-unit level: 91.7% identical classification, Pearson r between Rigby and Tougaloo county counts = **0.982**. Rigby flags 1,084 of 3,235 US counties (33.5%) at the Surely/Probable/Possible confidence threshold; Tougaloo flagged 950 (29.4%).
+
+Full Tier 3 writeup: [analysis/REPORT_TIER3_RIGBY_2026_05_15.md](analysis/REPORT_TIER3_RIGBY_2026_05_15.md).
+
 ### Deferred to v0.6 (and beyond)
 
-1. **v0.6 block-group disaggregation.** ACS 5-yr block-group fetch landed (13 tables). Build cell assignment at block-group resolution to push N from ≈456 → ≈30,000+ units.
-2. **Tier 3 (queued):** Bayly et al. 2024 sundown source replication — fetch Bayly's canonical dataset, swap into v0.4 in place of the Tougaloo scrape, compare sundown coefficient.
-3. **Arm A revisit:** dedicated session for WONDER finder-tool replay OR NBER MCD raw mortality fetch.
-4. Per-geo reporting-rate adjustment (needs NVDRS county data; CDC access request).
-5. Apply the structural-prior partial-pooling framework (the methodology corpus's core mechanism) DIRECTLY to the historical-mechanism × cell residual structure rather than treating it as fixed-effect adjustment.
+1. **v0.6 block-group disaggregation.** ACS 5-yr block-group fetch landed (13 tables). Build cell assignment at block-group resolution to refine within-county cell signal.
+2. **Arm A revisit:** dedicated session for WONDER finder-tool replay OR NCHS Restricted-Use Data application (3-6 mo).
+3. Per-geo reporting-rate adjustment (needs NVDRS county data; CDC access request).
+4. Apply the structural-prior partial-pooling framework (the methodology corpus's core mechanism) DIRECTLY to the historical-mechanism × cell residual structure rather than treating it as fixed-effect adjustment.
 
-Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition), [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md) (v0.5 self-replication, Arm B landed + Arm A deferred).
+Full writeups: [analysis/FULL_REPORT_2026_05_14.md](analysis/FULL_REPORT_2026_05_14.md) (v0.1 + v0.2), [analysis/REPORT_v0_3_2026_05_15.md](analysis/REPORT_v0_3_2026_05_15.md) (v0.3 HOLC + VRA), [analysis/REPORT_v0_4_2026_05_15.md](analysis/REPORT_v0_4_2026_05_15.md) (v0.4 sundown + final H_HISTORICAL_MECHANISM disposition), [analysis/REPORT_v0_5_2026_05_15.md](analysis/REPORT_v0_5_2026_05_15.md) (v0.5 self-replication, Arm B landed + Arm A deferred), [analysis/REPORT_TIER3_RIGBY_2026_05_15.md](analysis/REPORT_TIER3_RIGBY_2026_05_15.md) (Tier 3 sundown source replication).
 
 ---
 
