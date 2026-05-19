@@ -1,5 +1,33 @@
 # Gun Violence Cross-Geography Study
 
+## Summary
+
+This is a pre-registered observational study of present-day firearm-death rates across U.S. counties. After adjusting for current race composition, income, education, employment, household structure, age structure, healthcare access, geography type, and a multi-dimensional structural-inequity composite, three predictors remain independently associated with higher firearm-death rates and survive every robustness test we ran — a source swap, a 5-fold random county split, and a finer block-group geographic re-aggregation:
+
+1. **Race and inequity, together** (coefficient ≈ −0.45). Across three versions of the model, race composition and inequity could not be cleanly separated; the same interaction surfaces to two decimal places every time. At the county scale, they appear to index the same underlying process measured through different proxies.
+2. **1930s HOLC redlining intensity** (coefficient ≈ +0.70). Counties with a larger share of 1930s federal D-grade ("redlined") area today have roughly twice the firearm-death rate per unit increase, after the current controls listed above — ninety years after the policy was implemented and sixty years after it was formally repudiated.
+3. **Mid-20th-century sundown-town count** (coefficient ≈ +0.13 per log(1 + count)). Counties with about ten documented sundown towns have roughly 36% higher firearm-death rates, after the current controls and after HOLC. Robust to swapping in an independent sundown-town dataset (Rigby 2025) and to the 5-fold resampling. When we re-aggregate at the finer block-group scale the coefficient attenuates to zero — meaning the sundown signal appears to operate at the whole-county level, not within sub-county cells.
+
+A fourth coefficient — **Voting Rights Act Section 4(b) preclearance** (≈ +0.13) — turns up as clean only at the block-group aggregation and is treated as provisional until it can be replicated on an independent VRA-coverage dataset.
+
+### What this study does and does not show
+
+The study is observational. It shows that these historical-policy markers and the race-and-inequity interaction continue to predict county-level firearm-death variation after every current-condition control the public data allows. It does not establish individual-level causation, does not measure individual-level discrimination, and does not adjudicate among the plausible pathways from past policy to present harm — cumulative wealth differences, demographic sorting, institutional persistence, intergenerational trauma, contemporary investment disparities. The race-and-inequity entanglement is a statement about what can and cannot be separated at the county scale; it does not on its own assign causal priority between the two.
+
+### Caveats
+
+- **Pre-COVID outcome window deferred.** The CDC mortality file needed for a 2014–2018 replication has had county-level geography suppressed in the public-use version since 2005; the restricted-use application is a 3-to-6-month process and is queued.
+- **VRA finding is provisional.** It only emerged at the finer geographic aggregation and needs an independent dataset before being treated as established.
+- **Sundown aggregation sensitivity is documented.** The block-group attenuation is a real finding, not an error: it reframes sundown as a whole-county-scale effect.
+- **Geographic-mechanism hypothesis inconclusive.** Most of the geo-type variation got absorbed into the cell partition at this design.
+- **One substrate.** This is one of seven substrates in a methodology corpus testing a partial-pooling framework; nothing here generalizes past this substrate without independent testing.
+
+### Planned follow-ups
+
+Revisit the pre-COVID arm when restricted-use mortality access lands; replicate the VRA finding on an independent dataset; adjust for per-geography firearm-reporting rates using NVDRS county data once CDC access is granted; apply the methodology corpus's partial-pooling framework directly to the historical-mechanism × cell residual structure rather than treating those markers as fixed adjustments.
+
+---
+
 **Working title:** Cross-Geography Decoupling of Race and Structural Inequity Effects on Gun Violence Rates in Working-Class American Communities
 
 **Author:** Nathan Humphrey
@@ -55,8 +83,6 @@ Findings will be reported with explicit power-tier stratification per `notes/gun
 | **H_INTERACTION** | **SUPPORTED (replicated v0.2 → v0.3 → v0.4)** |
 | **H_HISTORICAL_MECHANISM** | **SUPPORTED** — HOLC redlining + sundown towns both CI-clean; VRA null |
 | H_GEOGRAPHIC_MECHANISM | Inconclusive (geo absorbed into cell) |
-
-### **This is statistical evidence of systemic racism.**
 
 The two CI-clean historical-mechanism findings (HOLC redlining, sundown towns) demonstrate that **explicit racist policies from 60-90 years ago still independently predict present-day firearm-death rates**, after controlling for current race composition, current structural inequity, current geography, current income, education, employment, household structure, age structure, and health-care access. In epidemiological terms, this is the operational definition of *structural racism / systemic racism*: harm patterns that survive the removal of all current observable confounders and that load on historical-policy markers.
 
