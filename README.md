@@ -84,7 +84,7 @@ Findings will be reported with explicit power-tier stratification per `notes/gun
 | **H_HISTORICAL_MECHANISM** | **SUPPORTED** — HOLC redlining + sundown towns both CI-clean; VRA null |
 | H_GEOGRAPHIC_MECHANISM | Inconclusive (geo absorbed into cell) |
 
-The two CI-clean historical-mechanism findings (HOLC redlining, sundown towns) demonstrate that **explicit racist policies from 60-90 years ago still independently predict present-day firearm-death rates**, after controlling for current race composition, current structural inequity, current geography, current income, education, employment, household structure, age structure, and health-care access. In epidemiological terms, this is the operational definition of *structural racism / systemic racism*: harm patterns that survive the removal of all current observable confounders and that load on historical-policy markers.
+The two CI-clean historical-mechanism findings (HOLC redlining, sundown towns) demonstrate that **explicit racist policies from 60-90 years ago still independently predict present-day firearm-death rates**, after controlling for current race composition, current structural inequity, current geography, current income, education, employment, household structure, age structure, and health-care access.
 
 The pre-registered §6 disposition rule fires `H_HISTORICAL_MECHANISM = SUPPORTED` because two distinct historical-policy channels — built-environment property-finance (HOLC) and explicit social-exclusion violence (sundown towns) — each pass the locked CI threshold independently in a model that already adjusts for everything we can measure about counties *as they exist today*.
 
