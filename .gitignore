@@ -38,6 +38,24 @@ analysis/production_v0_*/posterior_full.parquet
 # Geographic: TIGER 2024 county shapefile (re-downloadable from Census)
 geographic/tiger_county_2024/
 
+# ---------------------------------------------------------------------------
+# LITERATURE — publisher PDFs are NEVER committed.
+# This is a PUBLIC repo. The PDFs under literature/ are copyrighted publisher
+# files obtained via library/OA access, and one is a personal DeepDyve rental
+# watermarked to the account holder. Committing them would be redistribution.
+# The text artifacts (INDEX.md, references.bib) ARE committed — they are ours,
+# and they carry the DOI for every source so the library is reconstructable.
+# ---------------------------------------------------------------------------
+literature/**/*.pdf
+
+# Displacement: per-city event caches — 13 MB, fully derivable by re-running
+# displacement/fetch_city_shootings.py (each city's manifest records provenance).
+displacement/data/
+
+# Displacement: run logs and bytecode
+displacement/*.log
+displacement/__pycache__/
+
 # Census Places gazetteer (re-downloadable from Census)
 geographic/census_places_gaz_2024/
 

@@ -1,0 +1,331 @@
+city,mid,n
+Chicago,-145.0,43
+Chicago,-135.0,61
+Chicago,-125.0,55
+Chicago,-115.0,49
+Chicago,-105.0,58
+Chicago,-95.0,78
+Chicago,-85.0,47
+Chicago,-75.0,68
+Chicago,-65.0,79
+Chicago,-55.0,72
+Chicago,-45.0,55
+Chicago,-35.0,59
+Chicago,-25.0,56
+Chicago,-15.0,70
+Chicago,-5.0,65
+Chicago,5.0,71
+Chicago,15.0,59
+Chicago,25.0,61
+Chicago,35.0,75
+Chicago,45.0,47
+Chicago,55.0,45
+Chicago,65.0,46
+Chicago,75.0,74
+Chicago,85.0,51
+Chicago,95.0,56
+Chicago,105.0,50
+Chicago,115.0,61
+Chicago,125.0,47
+Chicago,135.0,59
+Chicago,145.0,64
+Philadelphia,-145.0,35
+Philadelphia,-135.0,25
+Philadelphia,-125.0,39
+Philadelphia,-115.0,23
+Philadelphia,-105.0,18
+Philadelphia,-95.0,60
+Philadelphia,-85.0,34
+Philadelphia,-75.0,26
+Philadelphia,-65.0,44
+Philadelphia,-55.0,29
+Philadelphia,-45.0,31
+Philadelphia,-35.0,29
+Philadelphia,-25.0,36
+Philadelphia,-15.0,54
+Philadelphia,-5.0,115
+Philadelphia,5.0,95
+Philadelphia,15.0,67
+Philadelphia,25.0,28
+Philadelphia,35.0,16
+Philadelphia,45.0,31
+Philadelphia,55.0,48
+Philadelphia,65.0,40
+Philadelphia,75.0,30
+Philadelphia,85.0,22
+Philadelphia,95.0,38
+Philadelphia,105.0,44
+Philadelphia,115.0,39
+Philadelphia,125.0,24
+Philadelphia,135.0,42
+Philadelphia,145.0,44
+New York,-145.0,41
+New York,-135.0,18
+New York,-125.0,23
+New York,-115.0,20
+New York,-105.0,17
+New York,-95.0,19
+New York,-85.0,29
+New York,-75.0,13
+New York,-65.0,28
+New York,-55.0,21
+New York,-45.0,16
+New York,-35.0,23
+New York,-25.0,22
+New York,-15.0,24
+New York,-5.0,36
+New York,5.0,36
+New York,15.0,31
+New York,25.0,21
+New York,35.0,17
+New York,45.0,16
+New York,55.0,30
+New York,65.0,19
+New York,75.0,11
+New York,85.0,27
+New York,95.0,13
+New York,105.0,15
+New York,115.0,18
+New York,125.0,23
+New York,135.0,25
+New York,145.0,25
+Detroit,-145.0,2
+Detroit,-135.0,3
+Detroit,-125.0,5
+Detroit,-115.0,3
+Detroit,-105.0,5
+Detroit,-95.0,8
+Detroit,-85.0,3
+Detroit,-75.0,6
+Detroit,-65.0,2
+Detroit,-55.0,7
+Detroit,-45.0,6
+Detroit,-35.0,10
+Detroit,-25.0,9
+Detroit,-15.0,16
+Detroit,-5.0,35
+Detroit,5.0,29
+Detroit,15.0,9
+Detroit,25.0,12
+Detroit,35.0,5
+Detroit,45.0,1
+Detroit,55.0,1
+Detroit,65.0,3
+Detroit,75.0,0
+Detroit,85.0,1
+Detroit,95.0,4
+Detroit,105.0,1
+Detroit,115.0,3
+Detroit,125.0,3
+Detroit,135.0,0
+Detroit,145.0,0
+Baltimore,-145.0,81
+Baltimore,-135.0,35
+Baltimore,-125.0,49
+Baltimore,-115.0,47
+Baltimore,-105.0,34
+Baltimore,-95.0,29
+Baltimore,-85.0,48
+Baltimore,-75.0,43
+Baltimore,-65.0,60
+Baltimore,-55.0,43
+Baltimore,-45.0,23
+Baltimore,-35.0,81
+Baltimore,-25.0,40
+Baltimore,-15.0,78
+Baltimore,-5.0,94
+Baltimore,5.0,46
+Baltimore,15.0,44
+Baltimore,25.0,24
+Baltimore,35.0,19
+Baltimore,45.0,20
+Baltimore,55.0,14
+Baltimore,65.0,16
+Baltimore,75.0,21
+Baltimore,85.0,38
+Baltimore,95.0,45
+Baltimore,105.0,101
+Baltimore,115.0,45
+Baltimore,125.0,44
+Baltimore,135.0,58
+Baltimore,145.0,37
+Los Angeles,-145.0,59
+Los Angeles,-135.0,58
+Los Angeles,-125.0,43
+Los Angeles,-115.0,55
+Los Angeles,-105.0,66
+Los Angeles,-95.0,89
+Los Angeles,-85.0,58
+Los Angeles,-75.0,49
+Los Angeles,-65.0,32
+Los Angeles,-55.0,75
+Los Angeles,-45.0,56
+Los Angeles,-35.0,43
+Los Angeles,-25.0,37
+Los Angeles,-15.0,150
+Los Angeles,-5.0,154
+Los Angeles,5.0,277
+Los Angeles,15.0,256
+Los Angeles,25.0,54
+Los Angeles,35.0,51
+Los Angeles,45.0,52
+Los Angeles,55.0,68
+Los Angeles,65.0,103
+Los Angeles,75.0,62
+Los Angeles,85.0,68
+Los Angeles,95.0,67
+Los Angeles,105.0,52
+Los Angeles,115.0,75
+Los Angeles,125.0,59
+Los Angeles,135.0,43
+Los Angeles,145.0,33
+Seattle,-145.0,2
+Seattle,-135.0,11
+Seattle,-125.0,3
+Seattle,-115.0,8
+Seattle,-105.0,2
+Seattle,-95.0,9
+Seattle,-85.0,10
+Seattle,-75.0,6
+Seattle,-65.0,4
+Seattle,-55.0,0
+Seattle,-45.0,4
+Seattle,-35.0,2
+Seattle,-25.0,10
+Seattle,-15.0,5
+Seattle,-5.0,3
+Seattle,5.0,5
+Seattle,15.0,10
+Seattle,25.0,1
+Seattle,35.0,3
+Seattle,45.0,3
+Seattle,55.0,12
+Seattle,65.0,6
+Seattle,75.0,9
+Seattle,85.0,3
+Seattle,95.0,10
+Seattle,105.0,6
+Seattle,115.0,0
+Seattle,125.0,2
+Seattle,135.0,12
+Seattle,145.0,0
+Kansas City,-145.0,10
+Kansas City,-135.0,12
+Kansas City,-125.0,31
+Kansas City,-115.0,50
+Kansas City,-105.0,83
+Kansas City,-95.0,62
+Kansas City,-85.0,54
+Kansas City,-75.0,35
+Kansas City,-65.0,25
+Kansas City,-55.0,22
+Kansas City,-45.0,11
+Kansas City,-35.0,16
+Kansas City,-25.0,45
+Kansas City,-15.0,201
+Kansas City,-5.0,171
+Kansas City,5.0,193
+Kansas City,15.0,138
+Kansas City,25.0,101
+Kansas City,35.0,67
+Kansas City,45.0,15
+Kansas City,55.0,6
+Kansas City,65.0,24
+Kansas City,75.0,23
+Kansas City,85.0,36
+Kansas City,95.0,71
+Kansas City,105.0,42
+Kansas City,115.0,39
+Kansas City,125.0,37
+Kansas City,135.0,29
+Kansas City,145.0,20
+Milwaukee,-145.0,167
+Milwaukee,-135.0,140
+Milwaukee,-125.0,176
+Milwaukee,-115.0,116
+Milwaukee,-105.0,175
+Milwaukee,-95.0,207
+Milwaukee,-85.0,163
+Milwaukee,-75.0,119
+Milwaukee,-65.0,184
+Milwaukee,-55.0,183
+Milwaukee,-45.0,235
+Milwaukee,-35.0,146
+Milwaukee,-25.0,133
+Milwaukee,-15.0,169
+Milwaukee,-5.0,185
+Milwaukee,5.0,147
+Milwaukee,15.0,181
+Milwaukee,25.0,160
+Milwaukee,35.0,196
+Milwaukee,45.0,233
+Milwaukee,55.0,146
+Milwaukee,65.0,108
+Milwaukee,75.0,168
+Milwaukee,85.0,221
+Milwaukee,95.0,177
+Milwaukee,105.0,183
+Milwaukee,115.0,199
+Milwaukee,125.0,157
+Milwaukee,135.0,122
+Milwaukee,145.0,176
+Boston,-145.0,14
+Boston,-135.0,25
+Boston,-125.0,7
+Boston,-115.0,15
+Boston,-105.0,6
+Boston,-95.0,8
+Boston,-85.0,13
+Boston,-75.0,10
+Boston,-65.0,16
+Boston,-55.0,9
+Boston,-45.0,15
+Boston,-35.0,6
+Boston,-25.0,6
+Boston,-15.0,23
+Boston,-5.0,21
+Boston,5.0,25
+Boston,15.0,26
+Boston,25.0,12
+Boston,35.0,5
+Boston,45.0,19
+Boston,55.0,18
+Boston,65.0,9
+Boston,75.0,20
+Boston,85.0,2
+Boston,95.0,15
+Boston,105.0,15
+Boston,115.0,4
+Boston,125.0,10
+Boston,135.0,17
+Boston,145.0,8
+Dallas,-145.0,36
+Dallas,-135.0,40
+Dallas,-125.0,35
+Dallas,-115.0,43
+Dallas,-105.0,62
+Dallas,-95.0,31
+Dallas,-85.0,41
+Dallas,-75.0,41
+Dallas,-65.0,23
+Dallas,-55.0,30
+Dallas,-45.0,23
+Dallas,-35.0,15
+Dallas,-25.0,36
+Dallas,-15.0,22
+Dallas,-5.0,25
+Dallas,5.0,20
+Dallas,15.0,21
+Dallas,25.0,19
+Dallas,35.0,13
+Dallas,45.0,14
+Dallas,55.0,21
+Dallas,65.0,38
+Dallas,75.0,32
+Dallas,85.0,21
+Dallas,95.0,31
+Dallas,105.0,17
+Dallas,115.0,13
+Dallas,125.0,16
+Dallas,135.0,9
+Dallas,145.0,21
